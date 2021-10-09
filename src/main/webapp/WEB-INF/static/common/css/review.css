@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	justify-content: space-around;
+	padding: 0 0.2em;
+	text-align: center;
+	width: 5em;
+	margin-top: 20px;
+}
+			 
+.star-rating input {
+	display: none;
+}
+			 
+.star-rating label {
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 2.3px;
+	-webkit-text-stroke-color: #2b2a29;
+	cursor: pointer;
+}
+			 
+.star-rating :checked ~ label {
+	-webkit-text-fill-color: gold;
+}
+			 
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+	-webkit-text-fill-color: #fff58c;
+}
+.review_textarea{
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	height:100px;
+}

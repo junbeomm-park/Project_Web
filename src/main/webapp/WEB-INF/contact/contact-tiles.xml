@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- contact 관련 작업으로 response될 페이지를 등록하는 설정파일 -->
+	<definition name="contactTemplate" template="/WEB-INF/contact/contact.jsp">
+		<put-attribute name="nav" value="/WEB-INF/layout/nav.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>	
+	</definition>
+	
+	
+	
+	
+	
+</tiles-definitions> 

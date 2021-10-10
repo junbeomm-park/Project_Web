@@ -30,7 +30,10 @@ public class IndexController {
 	public String metropolygon() {
 		return "metropolygon";
 	}
-	
+	@RequestMapping("/about.do")
+	public String about() {
+		return "about";
+	}
 	
 //	@RequestMapping("/emp/login.do")
 //	public String advancedView() {

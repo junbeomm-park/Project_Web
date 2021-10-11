@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-	<tiles:insertAttribute name="nav"></tiles:insertAttribute>
+	
  <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');">
 			<div class="overlay"></div>
 			<div class="container">
@@ -57,7 +57,5 @@
 				</div>
 			</div>
 		</section>
-		<div>
-			<tiles:insertAttribute name="footer"></tiles:insertAttribute>
-		</div> 
+		 
 		

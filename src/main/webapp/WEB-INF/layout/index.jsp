@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-    	<tiles:insertAttribute name="nav"></tiles:insertAttribute>
+    	
     <div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/background-02.jpg');">
       <div class="overlay"></div>
       <div class="container">
@@ -10,7 +10,7 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore <br></strong> your amazing city</h1>
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
             <div class="block-17 my-4">
-              <form action="" method="post" class="d-block d-flex">
+              <form action="/tour/index.do" method="post" class="d-block d-flex">
                 <div class="fields d-block d-flex">
                   <div class="textfield-search one-third">
                   	<input type="text" class="form-control" placeholder="Ex: food, service, hotel">
@@ -551,9 +551,7 @@
       </div>
     </section>
 
-	<div>
-		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
-	</div>    
+	    
   
 
   

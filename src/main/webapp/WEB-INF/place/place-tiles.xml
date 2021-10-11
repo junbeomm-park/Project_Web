@@ -4,9 +4,8 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<!-- contact 관련 작업으로 response될 페이지를 등록하는 설정파일 -->
-	<definition name="contact" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/contact/contact.jsp"/>
-			
+	<definition name="tour" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/place/tour.jsp"/>
 	</definition>
 	
 	

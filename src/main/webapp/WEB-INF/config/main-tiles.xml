@@ -13,13 +13,9 @@
 	
 	<!-- 뷰 -->
 	<definition name="index" extends="mainTemplate"/>
-
-
-<!-- 	<definition name="place" extends="placeTemplate"/>
-	<definition name="contact" extends="contactTemplate"/>
 	<definition name="login" extends="loginTemplate"/>
 	<definition name="sign" extends="signTemplate"/>
-		 -->
+	
 	
 	
 </tiles-definitions>

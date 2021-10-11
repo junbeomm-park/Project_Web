@@ -14,6 +14,14 @@ public class IndexController {
 	public String contact() {
 		return "contact";
 	}
+	@RequestMapping("/planner.do")
+	public String planner() {
+		return "planner";
+	}
+	@RequestMapping("/about.do")
+	public String about() {
+		return "about";
+	}
 	@RequestMapping("/login.do")
 	public String login() {
 		return "login";
@@ -30,14 +38,12 @@ public class IndexController {
 	public String tourDetail() {
 		return "tour/detail";
 	}
+	
 	@RequestMapping("/metropolygon.json")
 	public String metropolygon() {
 		return "metropolygon";
 	}
-	@RequestMapping("/about.do")
-	public String about() {
-		return "about";
-	}
+	
 	
 //	@RequestMapping("/emp/login.do")
 //	public String advancedView() {

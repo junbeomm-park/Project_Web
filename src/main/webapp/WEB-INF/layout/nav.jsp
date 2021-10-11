@@ -68,7 +68,7 @@
 	          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="/tour/place/tourPage.do" class="nav-link">Tour</a></li>
 	          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
-	          <li class="nav-item"><a href="/tour/Planner.do" class="nav-link">Planner</a></li>
+	          <li class="nav-item"><a href="/tour/planner.do" class="nav-link">Planner</a></li>
 	          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>login</span></a></li>
 	          
 	        </ul>

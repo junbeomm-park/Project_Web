@@ -3,13 +3,11 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<!-- contact 관련 작업으로 response될 페이지를 등록하는 설정파일 -->
+	<!-- tour 관련 작업으로 response될 페이지를 등록하는 설정파일 -->
 	<definition name="tour" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/place/tour.jsp"/>
 	</definition>
-	
-	
-	
-	
-	
-</tiles-definitions> 
+	<definition name="tour/detail" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/place/tour_detail.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

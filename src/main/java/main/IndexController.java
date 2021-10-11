@@ -1,12 +1,7 @@
 package main;
 
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-
 
 @Controller
 public class IndexController {
@@ -28,20 +23,17 @@ public class IndexController {
 		return "sign";
 	}
 	@RequestMapping("/place/tour.do")
-	public String place() {
+	public String tourListView() {
 		return "tour";
+	}
+	@RequestMapping("/place/tourdetail.do")
+	public String tourDetail() {
+		return "tour/detail";
 	}
 	@RequestMapping("/metropolygon.json")
 	public String metropolygon() {
 		return "metropolygon";
 	}
-	@RequestMapping("/about.do")
-	public String about() {
-		return "about";
-	}
-	
-
-}
 	
 	
 //	@RequestMapping("/emp/login.do")
@@ -49,7 +41,10 @@ public class IndexController {
 //		return "login"; //tiles설정 파일에 등록된 view의 이름
 //	}
 	
+	@RequestMapping("/menu/board.do")
+	public String jdbcView() {
+		return "board/list";
+	}
 	
-	
-
+}
 

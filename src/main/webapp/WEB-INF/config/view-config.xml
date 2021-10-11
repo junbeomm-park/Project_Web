@@ -6,9 +6,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-	<!-- 뷰만 response한느 컨트롤러 추가 -->
+	<!-- 뷰만 response하는 컨트롤러 추가 -->
 	<view-controller path="/about/aboutPage.do" view-name="about"/>
-	<view-controller path="/tour/tourPage.do" view-name="tour"/>
+	<view-controller path="/place/tourPage.do" view-name="tour"/>
 	<view-controller path="/contact/contactPage.do" view-name="contact"/>
 	<view-controller path="/planner/plannerPage.do" view-name="planner"/>
 	<view-controller path="/member/loginPage.do" view-name="login"/>

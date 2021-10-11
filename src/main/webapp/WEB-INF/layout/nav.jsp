@@ -3,7 +3,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+	<head>
 		<!-- Main CDN -->
 		<title>Tour Place</title>
 		<meta charset="UTF-8">
@@ -53,29 +53,30 @@
 		#searchConF .ingi-words div:before { content: ''; display: inline-block; position: relative; left: 0; top: -4px; width: 3px; height: 3px; background-color: #7d7c7a; margin-right: 0.3rem; border-radius: 20px; }
 		#searchConF .ingi-words div { padding: 0.25rem 0.5rem; }
 		</style>
-  </head>
-  <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="/tour/index.do">tour place</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="/tour/place/tour.do" class="nav-link">Tour</a></li>
-          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="/tour/Planner.do" class="nav-link">Planner</a></li>
-          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>login</span></a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
+	</head>
+	<body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/tour/index.do">tour place</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="/tour/about/about.jsp" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="/tour/place/tourPage.do" class="nav-link">Tour</a></li>
+	          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="/tour/planner/Planner.jsp" class="nav-link">Planner</a></li>
+	          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>login</span></a></li>
+	          
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</body>
+</html>
 
   
 

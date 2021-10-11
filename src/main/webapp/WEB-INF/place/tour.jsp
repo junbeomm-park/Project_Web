@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-   		<meta charset="utf-8">
+   		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	</head>
   <body>
@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Tour</span></p>
+            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span>Tour</span></p>
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destination</h1>
           </div>
         </div>
@@ -27,32 +27,46 @@
         <div class="row">
         	<div class="col-lg-3 sidebar ftco-animate">
         		<div class="sidebar-wrap bg-light ftco-animate">
-        			<h3 class="heading mb-4">Find City</h3>
+        			<h3 class="heading mb-4">여행지 검색</h3>
         			<form action="#">
         				<div class="fields">
 		              <div class="form-group">
-		                <input type="text" class="form-control" placeholder="Destination, City">
+		                <input type="text" class="form-control" placeholder="관광지명">
 		              </div>
 		              <div class="form-group">
 		                <div class="select-wrap one-third">
 	                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 	                    <select name="" id="" class="form-control" placeholder="Keyword search">
-	                      <option value="">Select Location</option>
-	                      <option value="">San Francisco USA</option>
-	                      <option value="">Berlin Germany</option>
-	                      <option value="">Lodon United Kingdom</option>
-	                      <option value="">Paris Italy</option>
+	                    	<option value disabled selected hidden>광역시/도</option>
+							<option value>전국</option>
+							<option value="서울">서울</option>
+							<option value="부산">부산</option>
+							<option value="대구">대구</option>
+							<option value="인천">인천</option>
+							<option value="광주">광주</option>
+							<option value="대전">대전</option>
+							<option value="울산">울산</option>
+							<option value="세종">세종</option>
+							<option value="경기">경기</option>
+							<option value="강원">강원</option>
+							<option value="충북">충북</option>
+							<option value="충남">충남</option>
+							<option value="경북">경북</option>
+							<option value="경남">경남</option>
+							<option value="전북">전북</option>
+							<option value="전남">전남</option>
+							<option value="제주">제주</option>
 	                    </select>
 	                  </div>
 		              </div>
 		              <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control" placeholder="Date from">
+		              <!-- 	<input type="text" id="checkin_date" class="form-control" placeholder="Date from"> -->
 		              </div>
 		              <div class="form-group">
-		                <input type="text" id="checkin_date" class="form-control" placeholder="Date to">
+		                <!-- <input type="text" id="checkin_date" class="form-control" placeholder="Date to"> -->
 		              </div>
 		              <div class="form-group">
-		              	<div class="range-slider">
+<!-- 		              	<div class="range-slider">
 		              		<span>
 										    <input type="number" value="25000" min="0" max="120000"/>	-
 										    <input type="number" value="50000" min="0" max="120000"/>
@@ -60,16 +74,16 @@
 										  <input value="1000" min="0" max="120000" step="500" type="range"/>
 										  <input value="50000" min="0" max="120000" step="500" type="range"/>
 										  </svg>
-										</div>
+										</div> -->
 		              </div>
 		              <div class="form-group">
-		                <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
+		                <input type="submit" value="검색" class="btn btn-primary py-3 px-5">
 		              </div>
 		            </div>
 	            </form>
         		</div>
         		<div class="sidebar-wrap bg-light ftco-animate">
-        			<h3 class="heading mb-4">Star Rating</h3>
+        			<h3 class="heading mb-4">평점</h3>
         			<form method="post" class="star-rating">
 							  <div class="form-check">
 									<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -108,7 +122,7 @@
           	<div class="row">
           		<div class="col-md-4 ftco-animate">
 		    				<div class="destination">
-		    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/destination-1.jpg);">
+		    					<a href="/tour/place/tourdetail.do" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/destination-1.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -116,7 +130,7 @@
 		    					<div class="text p-3">
 		    						<div class="d-flex">
 		    							<div class="one">
-				    						<h3><a href="/tour/">Paris, Italy</a></h3>
+				    						<h3><a href="/tour/place/tourdetail.do">Paris, Italy</a></h3>
 				    						<p class="rate">
 				    							<i class="icon-star"></i>
 				    							<i class="icon-star"></i>
@@ -142,7 +156,7 @@
 		    			</div>
 		    			<div class="col-md-4 ftco-animate">
 		    				<div class="destination">
-		    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/destination-2.jpg);">
+		    					<a href="/tour/place/tourdetail.do" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/destination-2.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -150,7 +164,7 @@
 		    					<div class="text p-3">
 		    						<div class="d-flex">
 		    							<div class="one">
-				    						<h3><a href="#">Paris, Italy</a></h3>
+				    						<h3><a href="/tour/place/tourdetail.do">Paris, Italy</a></h3>
 				    						<p class="rate">
 				    							<i class="icon-star"></i>
 				    							<i class="icon-star"></i>

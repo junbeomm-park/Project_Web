@@ -8,18 +8,18 @@
 		<put-attribute name="nav" value="/WEB-INF/layout/nav.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/layout/index.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
-		
 	</definition>
 	
 	
 	<!-- 뷰 -->
 	<definition name="index" extends="mainTemplate"/>
-	<definition name="metropolygon" extends="mainTemplate"/>
-	<!-- <definition name="place" extends="placeTemplate"/>
-	<definition name="contact" extends="contactTemplate"/> -->
+
+
+<!-- 	<definition name="place" extends="placeTemplate"/>
+	<definition name="contact" extends="contactTemplate"/>
 	<definition name="login" extends="loginTemplate"/>
-	<definition name="sign" extends="signTemplate"/> 
-		
+	<definition name="sign" extends="signTemplate"/>
+		 -->
 	
 	
 </tiles-definitions>

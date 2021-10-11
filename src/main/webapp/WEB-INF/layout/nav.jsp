@@ -66,10 +66,10 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/tour/about/about.jsp" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/tour/place/tour.do" class="nav-link">Tour</a></li>
           <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="/tour/planner/Planner.jsp" class="nav-link">Planner</a></li>
+          <li class="nav-item"><a href="/tour/Planner.do" class="nav-link">Planner</a></li>
           <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>login</span></a></li>
           
         </ul>

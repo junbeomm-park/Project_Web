@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-	<form action="/tour2/about/about.do">
+	<form action="/tour/about/about.do">
 		<div class="hero-wrap js-fullheight"
 			style="background-image: url('images/background-01.jpg');">
 			<div class="overlay"></div>

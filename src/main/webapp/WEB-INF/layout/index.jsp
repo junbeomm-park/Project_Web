@@ -581,7 +581,7 @@
 	      </div>
 	    </section>
 	    <!-- map 불러오기 -->
-	<!-- <script>
+	 <script>
 			$(document).ready(sigunguChange);
 			$("#area").change(sigunguChange);
 			
@@ -668,7 +668,7 @@
 				DrawPolygon();
 				
 				function DrawPolygon() {
-					$.getJSON("metropolygon.json", function(geojson) {
+					$.getJSON("http://localhost:8088/web-semi-project/tour_place/metropolygon.json", function(geojson) {
 						var data = geojson.features;
 						var name = '';
 						var code = '';
@@ -764,7 +764,7 @@
 					});
 				}	
 			}	
-	</script> -->
+	</script> 
 	</body>
 </html>
   

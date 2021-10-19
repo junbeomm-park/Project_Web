@@ -40,12 +40,12 @@
 		</style>
 	</head>
 	<body>
-		<form method="post" action="/tour/member/sign.do">
+		<form method="post" action="/tour/member/find_id.do">
 		<div class="container">
 			<div class="input-form-backgroud row">
 				<div class="input-form col-md-12 mx-auto">
-					<h4 class="mb-3">회원가입</h4>
- 						<form class="validation-form" novalidate>
+					<h4 class="mb-3">아이디 찾기</h4>
+ 					<!-- <form class="validation-form" novalidate> -->
 						<div class="mb-3">
 							<label for="name">이름</label>
 							<input type="text" class="form-control" id="name" name="mem_nm" placeholder="이름을 입력해주세요." value="" required>
@@ -65,44 +65,11 @@
 							</div>
 						</div>
 						<div class="mb-3">
-							<label for="id">아이디</label>
-							<input type="text" class="form-control" id="id" name="mem_id" placeholder="아이디를 입력해주세요." required>
-							<div class="invalid-feedback">아이디를 입력해주세요.</div>
-						</div>
-						<div class="mb-3">
-							<label for="pass">비밀번호</label>
-							<input type="text" class="form-control" id="pass" name="pwd" placeholder="비밀번호를 입력해주세요." required>
-							<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
-						</div>
-						<div class="mb-3">
-							<label for="pass_check">비밀번호 재입력</label>
-							<input type="text" class="form-control" id="pass_check" name="pwd_check" placeholder="비밀번호를 재입력해주세요." required>
-							<div class="invalid-feedback">비밀번호를 재입력해주세요.</div>
-						</div>
-						<div class="mb-3">
-							<label for="cellno">전화번호</label>
-							<input type="text" class="form-control" id="cellno" name="cellno" placeholder="" required>
-						</div>
-						<div class="mb-3">
 							<label for="email">이메일</label>
 							<input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
 							<div class="invalid-feedback">이메일을 입력해주세요.</div>
 						</div>
-						<div class="mb-3">
-							<label for="address">주소</label>
-							<input type="text" class="form-control" id="address" name="addr" placeholder="서울특별시 강남구" required>
-							<div class="invalid-feedback">주소를 입력해주세요.</div>
-						</div>
-						<!-- <div class="mb-3">
-							<label for="address2">상세주소<span class="text-muted">&nbsp;(필수 아님)</span></label>
-							<input type="text" class="form-control" id="address2" placeholder="상세주소를 입력해주세요.">
-						</div> -->
-						<hr class="mb-4">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="aggrement" required>
-							<label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-						</div>
-						<button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button>
+						<button class="btn btn-primary btn-lg btn-block" type="submit">아이디 찾기</button>
 					</form>
 				</div>
 			</div>
@@ -110,19 +77,6 @@
 				<p class="mb-1">&copy; 2021 YD</p>
 			</footer>
 		</div>
-		<script>
-			window.addEventListener('load', () => {const forms = document.getElementsByClassName('validation-form');
-				Array.prototype.filter.call(forms, (form) => {
-					form.addEventListener('submit', function (event) {
-						if (form.checkValidity() === false) {
-							event.preventDefault();
-							event.stopPropagation();
-						}
-						form.classList.add('was-validated');
-					}, false);
-				});
-			}, false);
-		</script>
 		</form>
 	</body>
 </html>

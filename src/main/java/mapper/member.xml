@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tour.member">
+	<insert id="insert" parameterType="member">
+		insert into tb_mem values(#{mem_nm},#{birth},#{gender},#{mem_id},#{pwd},#{pwd_check},#{cellno},#{email},#{addr})
+	</insert>
+	<select id="find_id" resultType="member" parameterType="String">
+		select * from tb_mem where birth = #{birth} and gender = #{gender} and mem_nm = #{mem_nm} and email = #{email}
+	</select>
+	<select id="find_pass" resultType="member" parameterType="String">
+		select * from tb_mem where mem_id = #{mem_id} and birth = #{birth} and gender = #{gender} and mem_nm = #{mem_nm} and email = #{email} and cellno = #{cellno}
+	</select>
+	
+<!-- 	<select id="check" resultType="member" parameterType="String">
+		select * from member where id = #{id}
+	</select>
+	<select id="login" resultType="member" parameterType="member">
+		select * from member where id = #{id} and pass=#{pass}
+	</select>
+	<select id="list" resultType="member">
+		select * from member
+	</select>
+	<select id="find_id" resultType="member"> 아이디찾기
+		select * from member
+	</select>
+	<select id="find_pass" resultType="member"> 비번찾기
+		select * from member
+	</select> -->
+</mapper>

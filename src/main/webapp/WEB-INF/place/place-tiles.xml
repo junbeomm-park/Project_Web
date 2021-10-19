@@ -10,4 +10,7 @@
 	<definition name="tour/detail" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/place/tour_detail.jsp"></put-attribute>
 	</definition>
+	<definition name="chungcheong" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/place/chungcheong.jsp"/>
+	</definition>
 </tiles-definitions>

@@ -15,18 +15,12 @@ public class memberDAOImpl implements memberDAO {
 		sqlSession.insert("tour.member.insert", user);
 		return 0;
 	}
-	@Override
-	public int find_id(memberVO user) {
-		System.out.println("member테이블에 insert:"+user);
-		sqlSession.insert("tour.member.find_id", user);
-		return 0;
-	}
-	@Override
-	public int find_pass(memberVO user) {
-		System.out.println("member테이블에 insert:"+user);
-		sqlSession.insert("tour.member.find_id", user);
-		return 0;
-	}
+//	@Override
+//	public int find_id(memberVO user) {
+//		System.out.println("member테이블에 insert:"+user);
+//		sqlSession.insert("tour.member.find_id", user);
+//		return 0;
+//	}
 
 	@Override
 	public List<memberVO> getMemberList() {
@@ -45,13 +39,13 @@ public class memberDAOImpl implements memberDAO {
 //		return result; //아이디가 없으면 false 
 //	}
 //
-	@Override
-	public memberVO member(memeberVO memberUser) {
-		System.out.println("memberUser=>"+memberUser);
-		memberVO memberOkUser = sqlSession.selectOne("tour.member.member", memberUser);
-		System.out.println("결과=>"+memberOkUser);
-		return memberOkUser;
-	}
+//	@Override
+//	public LoginVO login(LoginVO loginUser) {
+//		System.out.println("loginUser=>"+loginUser);
+//		LoginVO loginOkUser = sqlSession.selectOne("tour.member.login", loginUser);
+//		System.out.println("결과=>"+loginOkUser);
+//		return loginOkUser;
+//	}
 
 }
 

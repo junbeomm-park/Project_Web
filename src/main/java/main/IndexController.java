@@ -30,14 +30,7 @@ public class IndexController {
 	public String sign() {
 		return "sign";
 	}
-	@RequestMapping("/place/tour.do")
-	public String tourListView() {
-		return "tour";
-	}
-	@RequestMapping("/place/tourdetail.do")
-	public String tourDetail() {
-		return "tour/detail";
-	}
+	
 	
 	@RequestMapping("/metropolygon.json")
 	public String metropolygon() {

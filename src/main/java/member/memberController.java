@@ -14,45 +14,18 @@ public class memberController {
 	@Autowired
 	memberService service;
 
-	@RequestMapping("/member/sign.do")
+	@RequestMapping("/member/insert.do")
 	// 스프링 MVC의 DispatcherServlet이 넘겨주는 VO객체를 서비스단의 메소드를 호출하면서 넘겨준다.
 	public String insert(memberVO command) { // VO객체를 command객체라 한다.
 		service.insert(command);
 		return "redirect:/index.do"; // 회원가입이 완료되면 로그인을 하기 위한 페이지로 redirect하도록 설정
 	}
 //	@RequestMapping("/member/find_id.do")
-//	public String find_id(memberVO finder) { 
-//		System.out.println("================" + finder);
-//		service.find_id(finder);
-//		return "redirect:/index.do";
+//	public String find_id(memberVO command) { 
+//		System.out.println("================" + command);
+//		service.insert(command);
+//		return null; 
 //	}
-	@RequestMapping(value = "/member/find_id.do", method = RequestMethod.POST)
-	public ModelAndView idfind(memberVO findUserInfo) {
-		System.out.println(findUserInfo);
-		ModelAndView mav = new ModelAndView();
-		//DB인증을 받은 user정보
-		memberVO passOkUser = service.member(findUserInfo);
-		String viewName = "";
-		if(passOkUser!=null) {
-			//비번찾기성공
-			viewName = "find/ok";
-		}else {
-			//비번찾기실패
-			viewName = "login";
-		}
-		mav.setViewName(viewName);
-		//view에서 로그인 사용자 정보를 사용하기 때문
-		mav.addObject("loginOkUser", loginOkUser);
-		System.out.println("db연동 완료:"+loginOkUser);
-		return mav;
-		
-	}
-	@RequestMapping("/member/find_pass.do")
-	public String find_pass(memberVO finder) { 
-		System.out.println("================" + finder);
-		service.find_id(finder);
-		return "redirect:/find_pass_page.do";
-	}
 
 	@RequestMapping("/member/list.do")
 	public ModelAndView getMemberList() {
@@ -64,27 +37,6 @@ public class memberController {
 		mav.setViewName("member/list");
 		mav.addObject("userlist", userlist);
 		return mav;
-	}
-	@RequestMapping(value = "/member/find_pwd.do", method = RequestMethod.POST)
-	public ModelAndView passfind(memberVO findUserInfo) {
-		System.out.println(findUserInfo);
-		ModelAndView mav = new ModelAndView();
-		//DB인증을 받은 user정보
-		memberVO passOkUser = service.member(findUserInfo);
-		String viewName = "";
-		if(passOkUser!=null) {
-			//비번찾기성공
-			viewName = "find/ok";
-		}else {
-			//비번찾기실패
-			viewName = "login";
-		}
-		mav.setViewName(viewName);
-		//view에서 로그인 사용자 정보를 사용하기 때문
-		mav.addObject("loginOkUser", loginOkUser);
-		System.out.println("db연동 완료:"+loginOkUser);
-		return mav;
-		
 	}
 
 //	//원래 웹을 요청하는 방식 =>emp/insert로 등록한 뷰의 모든, html태그가 서버에서 클라이언트로 모두 전송된다.
@@ -120,5 +72,25 @@ public class memberController {
 //		}
 //		return result;
 //	}
-
+//	@RequestMapping(value = "/emp/login.do", method = RequestMethod.POST)
+//	public ModelAndView login(LoginVO loginUserInfo) {
+//		System.out.println(loginUserInfo);
+//		ModelAndView mav = new ModelAndView();
+//		//DB인증을 받은 user정보
+//		LoginVO loginOkUser = service.login(loginUserInfo);
+//		String viewName = "";
+//		if(loginOkUser!=null) {
+//			//로그인성공
+//			viewName = "login/ok";
+//		}else {
+//			//로그인실패
+//			viewName = "login";
+//		}
+//		mav.setViewName(viewName);
+//		//view에서 로그인 사용자 정보를 사용하기 때문
+//		mav.addObject("loginOkUser", loginOkUser);
+//		System.out.println("db연동 완료:"+loginOkUser);
+//		return mav;
+//		
+//	}
 }

@@ -15,7 +15,7 @@ public class memberVO {
 		System.out.println("memberVO의 기본생성자");
 	}
 
-	//login용
+	//member용
 	public memberVO(String mem_id, String pwd) {
 		super();
 		this.mem_id = mem_id;
@@ -37,29 +37,20 @@ public class memberVO {
 		this.addr = addr;
 	}
 	//find_id용
-	public memberVO(String mem_nm, String gender, String birth, String email) {
-		super();
-		this.mem_nm = mem_nm;
-		this.gender = gender;
-		this.birth = birth;
-		this.email = email;
-	}
-	//find_pass용
-		public memberVO(String mem_id, String mem_nm, String gender, String birth, String email, String cellno) {
-			super();
-			this.mem_id	= mem_id;
-			this.mem_nm = mem_nm;
-			this.gender = gender;
-			this.birth = birth;
-			this.email = email;
-			this.cellno = cellno;
-		}
+//	public memberVO(String mem_nm, String gender, String birth) {
+//		super();
+//		this.mem_nm = mem_nm;
+//		this.gender = gender;
+//		this.birth = birth;
+//	}
 	@Override
 	public String toString() {
 		return "memberVO [mem_id=" + mem_id + ", mem_nm=" + mem_nm + ", gender=" + gender + ", pwd=" + pwd
 				+ ", pwd_check=" + pwd_check + ", email=" + email + ", birth=" + birth + ", cellno=" + cellno
 				+ ", addr=" + addr + "]";
 	}
+
+	
 	public String getMem_id() {
 		return mem_id;
 	}

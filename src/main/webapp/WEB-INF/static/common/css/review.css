@@ -8,9 +8,13 @@
 	padding: 0 0.2em;
 	text-align: center;
 	width: 5em;
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-bottom: 10px;
 }
-			 
+.star-rating p{
+	float: right;
+} 
 .star-rating input {
 	display: none;
 }
@@ -37,4 +41,13 @@
 	margin-bottom: 20px;
 	width: 100%;
 	height:100px;
+}
+button { 
+	margin-bottom: 100px;
+	width: 100px; 
+	background-color:#bae6f8;
+	border-radius: 30px;
+	border: none;
+	margin-top: 5px;
+	
 }

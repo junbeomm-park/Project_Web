@@ -61,5 +61,6 @@
 	
 	<context:component-scan base-package="member" />
 	<context:component-scan base-package="place" />
+	<context:component-scan base-package="review"/>
 	<context:component-scan base-package="main"/>
 </beans:beans>

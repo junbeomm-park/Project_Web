@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import place.PlaceVO;
+import review.ReviewService;
+import review.ReviewVO;
 
 @Controller
 public class PlaceController {
 	@Autowired
 	PlaceService service;
-
+	@Autowired
+	ReviewService service2;
+	
 	
 	@RequestMapping("/place/tour.do") 
 	public ModelAndView tourListView(String category) { 
@@ -31,8 +35,12 @@ public class PlaceController {
 	
 
 	@RequestMapping("/place/tourdetail.do")
-	public String tourDetail() {
-		return "tour/detail";
+	public ModelAndView tourDetail() {
+		ModelAndView mav = new ModelAndView();
+		List<ReviewVO> reviewlist = service2.reviewList();
+		mav.addObject("reviewlist", reviewlist);
+		mav.setViewName("tour/detail");
+		return mav;
 	}
 //
 //	@RequestMapping(value = "/place/ajax_tour.do", method = RequestMethod.GET, 

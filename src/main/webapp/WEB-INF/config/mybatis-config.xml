@@ -7,10 +7,12 @@
 		<typeAlias type = "member.memberVO" alias="member"/>
 		<typeAlias type = "place.PlaceVO" alias="place"/>
 		<typeAlias type="review.ReviewVO" alias="review"/>
+		<typeAlias type="course.CourseVO" alias="course"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource = "mapper/member.xml"/>
 		<mapper resource = "mapper/place.xml"/>
 		<mapper resource = "mapper/review.xml"/>
+		<mapper resource = "mapper/course.xml"/>
 	</mappers>
 </configuration>

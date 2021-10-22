@@ -14,6 +14,7 @@ public class ReviewController {
 	
 	@RequestMapping("/review/insert.do")
 	public String insert(ReviewVO review) {
+		System.out.println(review+"///////////////////////////////");
 		String url="";
 		int result = service.insert(review);
 		if(result>=1) {
@@ -24,13 +25,4 @@ public class ReviewController {
 		return url;
 	}
 	
-	@RequestMapping("/review/list.do")
-	public ModelAndView getReviewList() {
-		ModelAndView mav = new ModelAndView();
-		List<ReviewVO> reviewlist = service.reviewList();
-		System.out.println(reviewlist);
-		mav.setViewName("review/list");
-		mav.addObject("reviewlist", reviewlist);		
-		return mav;
-	}
 }

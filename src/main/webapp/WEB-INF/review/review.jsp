@@ -33,7 +33,7 @@
 									ReviewVO review = reviewlist.get(i);
 							%>
 								<tr>
-									<td><%=review.getId()%></td>
+									<td>${loginOkUser.id}</td>
 									<td><%=review.getScore() %></td>
 									<td><%=review.getContent() %></td>
 									<td><%=review.getWrite_date() %></td>
@@ -45,18 +45,19 @@
 			</div>
 		</form>
 		<form action="/tour/review/insert.do">
+			<input type= "hidden" name= "spotareaid" value="${place.spotareaid}">
 			<div class="container">
 					<div>
 				  			<div class="star-rating" onlaod="setReview()">
-								<input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+								<input type="radio" id="5-stars" name="score" value="★★★★★" v-model="ratings"/>
 								<label for="5-stars" class="star pr-4">★</label>
-								<input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+								<input type="radio" id="4-stars" name="score" value="★★★★☆" v-model="ratings"/>
 								<label for="4-stars" class="star">★</label>
-								<input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+								<input type="radio" id="3-stars" name="score" value="★★★☆☆" v-model="ratings"/>
 								<label for="3-stars" class="star">★</label>
-								<input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+								<input type="radio" id="2-stars" name="score" value="★★☆☆☆" v-model="ratings"/>
 								<label for="2-stars" class="star">★</label>
-								<input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+								<input type="radio" id="1-star" name="score" value="★☆☆☆☆" v-model="ratings" />
 								<label for="1-star" class="star">★</label>
 							</div>
 					</div>

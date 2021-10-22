@@ -7,20 +7,36 @@ public class ReviewVO {
 	String score;
 	String content;
 	Date write_date;
+	String spotareaid;
+	
 	public ReviewVO() {
 		
 	}
-	public ReviewVO(String id, String score, String content, Date write_date) {
+
+	public ReviewVO(String id, String score, String content, Date write_date, String spotareaid) {
 		super();
 		this.id = id;
 		this.score = score;
 		this.content = content;
 		this.write_date = write_date;
+		this.spotareaid = spotareaid;
 	}
+
+	
+	public String getSpotareaid() {
+		return spotareaid;
+	}
+
+	public void setSpotareaid(String spotareaid) {
+		this.spotareaid = spotareaid;
+	}
+
 	@Override
 	public String toString() {
-		return "ReviewVO [id=" + id + ", score=" + score + ", content=" + content + ", write_date=" + write_date + "]";
+		return "ReviewVO [id=" + id + ", score=" + score + ", content=" + content + ", write_date=" + write_date
+				+ ", spotareaid=" + spotareaid + "]";
 	}
+
 	public String getId() {
 		return id;
 	}

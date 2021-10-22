@@ -8,6 +8,7 @@
 		<put-attribute name="content" value="/WEB-INF/place/tour.jsp"/>
 	</definition>
 	<definition name="tour/detail" extends="subTemplate">
+		<put-attribute name="content1" value="/WEB-INF/place/placeInfo.jsp"/>
 		<put-attribute name="content5" value="/WEB-INF/review/review.jsp"/>
 	</definition>
 	<definition name="chungcheong" extends="mainTemplate">

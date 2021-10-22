@@ -23,9 +23,9 @@ public class PlaceDAOImpl implements PlaceDAO {
 	}
 
 	@Override
-	public PlaceVO read(String spotname) {
+	public PlaceVO read(String spotareaid) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("tour.place.read", spotareaid);
 	}
 
 	@Override

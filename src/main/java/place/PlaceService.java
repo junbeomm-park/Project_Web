@@ -13,7 +13,7 @@ public interface PlaceService {
 	List<PlaceVO> searchList(String search);
 	List<PlaceVO> searchList(String tag,String search);
 	List<PlaceVO> pageList();
-	PlaceVO read(String Place_no);
+	PlaceVO read(String spotareaid);
 	int update(PlaceVO Place);
 	int delete(String Place_no);
 	

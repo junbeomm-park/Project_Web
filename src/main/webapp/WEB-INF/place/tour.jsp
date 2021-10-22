@@ -158,7 +158,7 @@
   
 
     
-				    						<h3><a href="/tour/place/tourdetail.do"> <%= place.getSpotname() %>   </a></h3>
+				    						<h3><a href="/tour/place/tourdetail.do?spotareaid=<%= place.getSpotareaid() %>&state=READ"> <%= place.getSpotname() %>   </a></h3>
 				    					 
 				    						<p class="rate">
 				    							<i class="icon-star"></i>
@@ -173,7 +173,8 @@
 			    							
 		    							</div>
 		    						</div>
-		    						<p class="overflow: auto;"><%= place.getTag() %></p>
+		    						<p class=""><%= place.getTag() %></p>
+		    						
 		    						<p class="days">2 days 3 nights</p>
 		    						<hr>
 		    						<p class="bottom-area d-flex">

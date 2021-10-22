@@ -27,6 +27,12 @@ public class PlaceServiceImpl implements PlaceService {
 	}
 
 	@Override
+	public PlaceVO read(String spotareaid) {
+		// TODO Auto-generated method stub
+		return dao.read(spotareaid);
+	}
+
+	@Override
 	public List<PlaceVO> placeList() {
 		// TODO Auto-generated method stub
 		return dao.placeList();
@@ -62,11 +68,6 @@ public class PlaceServiceImpl implements PlaceService {
 		return null;
 	}
 
-	@Override
-	public PlaceVO read(String Place_no) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public int update(PlaceVO Place) {

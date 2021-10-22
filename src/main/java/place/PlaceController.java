@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import course.CourseService;
+import course.CourseVO;
 import place.PlaceVO;
 import review.ReviewService;
 import review.ReviewVO;
@@ -20,7 +22,9 @@ public class PlaceController {
 	PlaceService service;
 	@Autowired
 	ReviewService service2;
-	
+	/*
+	 * @Autowired CourseService service3;
+	 */
 	
 	@RequestMapping("/place/tour.do") 
 	public ModelAndView tourListView(String category) { 
@@ -34,12 +38,31 @@ public class PlaceController {
 	}
 	
 
-	@RequestMapping("/place/tourdetail.do")
-	public ModelAndView tourDetail() {
+//	@RequestMapping("/place/tourdetail.do")
+//	public ModelAndView tourDetail() {
+//		ModelAndView mav = new ModelAndView();
+//		
+//		
+//		mav.setViewName("tour/detail");
+//		return mav;
+//	
+//	}
+	@RequestMapping(value = "/place/tourdetail.do")
+	public ModelAndView read(String spotareaid, String state) {
+		System.out.println("readController => "+ spotareaid + "," + state);
 		ModelAndView mav = new ModelAndView();
+		//비지니스메소드 호출
+		PlaceVO place = service.read(spotareaid);
 		List<ReviewVO> reviewlist = service2.reviewList();
+//		List<CourseVO> courslist = service3.courseList();
+		String viewName = "";
+		//요청에 따라 뷰 설정
+		if(state.equals("READ")) {
+			viewName = "tour/detail";
+		}
+		mav.setViewName(viewName);
+		mav.addObject("place", place);
 		mav.addObject("reviewlist", reviewlist);
-		mav.setViewName("tour/detail");
 		return mav;
 	}
 //

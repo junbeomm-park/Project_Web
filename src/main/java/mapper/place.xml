@@ -12,4 +12,16 @@
 	<select id="category" parameterType="String" resultType="place">
 		select * from place where category=#{category}
 	</select>
+	<select id="read" resultType="place" parameterType="String">
+		select * from place where spotareaid=#{spotareaid}
+	</select>
+<!-- 	<select id="dynamicsql" resultType="place" parameterType="Map">
+		select * from place
+		<where>
+			<if test="tag=='spotareaid' and search!=''">
+				spotareaid like '%' || #{search} || '%'
+			</if>
+		
+		</where>
+	</select> -->
 </mapper>

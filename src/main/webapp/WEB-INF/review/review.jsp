@@ -45,6 +45,7 @@
 			</div>
 		</form>
 		<form action="/tour/review/insert.do">
+			<input type= "hidden" name= "id" value="lee">
 			<input type= "hidden" name= "spotareaid" value="${place.spotareaid}">
 			<div class="container">
 					<div>

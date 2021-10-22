@@ -11,8 +11,8 @@ public class ReviewDAOImpl implements ReviewDAO {
 	SqlSession sqlSession;
 	
 	@Override
-	public List<ReviewVO> reviewList() {
-		return sqlSession.selectList("tour.review.list");
+	public List<ReviewVO> reviewList(String spotareaid) {
+		return sqlSession.selectList("tour.review.list",spotareaid);
 	}
 
 	@Override

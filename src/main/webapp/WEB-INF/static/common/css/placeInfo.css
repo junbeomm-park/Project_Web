@@ -70,7 +70,7 @@ ul.imgs li{
 .bullets label{
     display: inline-block;
     border-radius: 50%;
-    background-color: rgba(1,1,1,1);
+    background-color: rgba(241,210,175,0.8);
     width: 20px;
     height: 20px;
     cursor: pointer;

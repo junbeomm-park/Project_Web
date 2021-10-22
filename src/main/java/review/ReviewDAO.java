@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ReviewDAO {
 	//리뷰목록조회
-	List<ReviewVO> reviewList();
+	List<ReviewVO> reviewList(String spotareaid);
 	//리뷰 입력
 	int insert(ReviewVO review);
 	//리뷰수정

@@ -10,8 +10,8 @@ public class ReviewServiceImpl implements ReviewService {
 	ReviewDAO dao;
 	
 	@Override
-	public List<ReviewVO> reviewList() {
-		return dao.reviewList();
+	public List<ReviewVO> reviewList(String spotareaid) {
+		return dao.reviewList(spotareaid);
 	}
 
 	@Override

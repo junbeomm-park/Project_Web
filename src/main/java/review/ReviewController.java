@@ -18,9 +18,9 @@ public class ReviewController {
 		String url="";
 		int result = service.insert(review);
 		if(result>=1) {
-			url="redirect:/place/tourdetail.do";
+			url="redirect:/place/tourdetail.do?spotareaid="+review.getSpotareaid()+"&state=READ";
 		}else {
-			url="redirect:/place/tourdetail.do";
+			url="redirect:/place/tourdetail.do?spotareaid="+review.getSpotareaid()+"&state=READ";
 		}
 		return url;
 	}

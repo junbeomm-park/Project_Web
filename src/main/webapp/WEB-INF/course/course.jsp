@@ -1,5 +1,5 @@
+<%@page import="place.PlaceVO"%>
 <%@page import="course.CourseVO"%>
-
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -12,16 +12,21 @@
 		<title></title>
 	</head>
 	<body>
-<%  ArrayList<CourseVO> courselist = (ArrayList<CourseVO>) request.getAttribute("courselist");
-	
-	int size = courselist.size();
-%>
-<%		    							
-											for(int i = 0; i < courselist.size() ; i++) { 
-											CourseVO course = courselist.get(i);
-%>
-		<div style="border:2px solid blue; width:100%; height:300px; font-size: 20pt; font-weight: bold;"><%= course.getCoursename() %></div>
-<%              } 
-%>
+		<%  ArrayList<PlaceVO> courselist = (ArrayList<PlaceVO>) request.getAttribute("courselist");
+			int size = courselist.size();
+			CourseVO coursename = (CourseVO)request.getAttribute("coursename");
+		%>	
+			<input type="hidden" name="spotareaid" value="${place.spotareaid}">
+			<div style="border:2px solid blue; width:100%; height:300px; font-size: 15pt;">
+				<h1><%=coursename.getCoursename()%></h1>
+				
+				<%		    							
+															for(int i = 0; i < courselist.size() ; i++) { 
+															PlaceVO course = courselist.get(i);
+				%>
+				<span> <%= course.getSpotname() %>&nbsp;&nbsp;→&nbsp;&nbsp; </span>
+				<%              } 
+				%>
+			</div>
 	</body>
 </html>

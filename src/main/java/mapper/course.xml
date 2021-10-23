@@ -6,9 +6,11 @@
   <!-- 	<select id="spotareaid" parameterType="place">
 		select * from place where spotareaname = #{spotareaname}
 	</select> --> 
-	<select id="list" resultType="course">
-		select * from course
-	</select> 
+<!-- 	<select id="list" resultType="course" parameterType="String"> 
+		select spotname from place where courseid = (select courseid from place where spotareaid=#{spotareaid})
+	</select> -->
 	
-
+	<select id="coursename" resultType="course" parameterType="String"> 
+		select coursename from course where courseid = (select courseid from place where spotareaid=#{spotareaid})
+	</select>
 </mapper>

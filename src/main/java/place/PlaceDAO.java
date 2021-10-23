@@ -14,6 +14,7 @@ public interface PlaceDAO {
 	List<PlaceVO> searchList(String search);
 	List<PlaceVO> searchList(String tag,String search);
 	List<PlaceVO> pageList();
+	List<PlaceVO> courseList(String spotareaid);
 	//게시글조회
 	PlaceVO read(String spotareaid);
 	//게시글수정

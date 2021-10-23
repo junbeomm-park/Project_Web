@@ -15,20 +15,16 @@ public class CourseDAOImpl implements CourseDAO {
 	@Autowired
 	SqlSession sqlSession;
 
-	@Override
-	public List<CourseVO> courseList() {
-		// TODO Auto-generated method stub
-		return sqlSession.selectList("tour.course.list");
-		
-		
-	}
-
+	
 	public CourseVO read(String courseid) {
 		//sql 실행결과가 레코드 하나 인경우
 		return sqlSession.selectOne("tour.course.read", courseid);
 	}
 
-	
+	@Override
+	public CourseVO courseName(String spotareaid) {
+		return sqlSession.selectOne("tour.course.coursename", spotareaid);
+	}
 	}
 
 

@@ -26,11 +26,6 @@ public class CourseServiceImpl implements CourseService {
 //		return placelist;
 //	}
 
-	@Override
-	public List<CourseVO> courseList() {
-		// TODO Auto-generated method stub
-		return dao.courseList();
-	}
 
 	
 
@@ -38,6 +33,14 @@ public class CourseServiceImpl implements CourseService {
 	public List<CourseVO> getMemeberlist() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+	@Override
+	public CourseVO courseName(String spotareaid) {
+		// TODO Auto-generated method stub
+		return dao.courseName(spotareaid);
 	}
 
 

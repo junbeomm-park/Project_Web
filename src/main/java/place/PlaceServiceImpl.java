@@ -25,6 +25,12 @@ public class PlaceServiceImpl implements PlaceService {
 		}
 		return placelist;
 	}
+	
+	@Override
+	public List<PlaceVO> courseList(String spotareaid) {
+		// TODO Auto-generated method stub
+		return dao.courseList(spotareaid);
+	}
 
 	@Override
 	public PlaceVO read(String spotareaid) {

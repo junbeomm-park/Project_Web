@@ -56,7 +56,8 @@ public class PlaceController {
       //비지니스메소드 호출
       PlaceVO place = service.read(spotareaid);
       List<ReviewVO> reviewlist = service2.reviewList(spotareaid);
-      List<CourseVO> courselist = service3.courseList();
+      List<PlaceVO> courselist = service.courseList(spotareaid);
+      CourseVO coursename = service3.courseName(spotareaid);
       System.out.println("**********"+reviewlist);
       System.out.println("**********"+courselist);
       String viewName = "";
@@ -68,6 +69,7 @@ public class PlaceController {
       mav.addObject("place", place);
       mav.addObject("reviewlist", reviewlist);
       mav.addObject("courselist", courselist);
+      mav.addObject("coursename", coursename);
       return mav;
    }
 //

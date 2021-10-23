@@ -23,6 +23,12 @@ public class PlaceDAOImpl implements PlaceDAO {
 	}
 
 	@Override
+	public List<PlaceVO> courseList(String spotareaid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("tour.place.courselist",spotareaid);
+	}
+
+	@Override
 	public PlaceVO read(String spotareaid) {
 		// TODO Auto-generated method stub
 		System.out.println("+++++++++++++++++"+spotareaid);

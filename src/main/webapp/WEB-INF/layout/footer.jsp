@@ -77,113 +77,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js" integrity="sha512-WY7Piz2TwYjkLlgxw9DONwf5ixUOBnL3Go+FSdqRxhKlOqx9F+ee/JsablX84YBPLQzUPJsZvV88s8YOJ4S/UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js" integrity="sha512-PDFb+YK2iaqtG4XelS5upP1/tFSmLUVJ/BVL8ToREQjsuXC5tyqEfAQV7Ca7s8b7RLHptOmTJak9jxlA2H9xQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.1/owl.carousel.min.js" integrity="sha512-R5COAyFZ7B88RiuYmY3RPq1uXLFAmRQoGhNF5NU+HaaROvzZ773eLF1guAY8lHM0jNRwgFUVuHWbfPacHXbfDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
 		<script src="/tour/common/js/main.js"></script>
 	</body>
-	<script>
-	(function(){
-		$(function(){
-			// calendar element 취득
-			var calendarEl = $('#calendar')[0];
-			// full-calendar 생성하기
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				expandRows: true, // 화면에 맞게 높이 재설정
-				slotMinTime: '08:00', // Day 캘린더에서 시작 시간
-				slotMaxTime: '20:00', // Day 캘린더에서 종료 시간
-				// 해더에 표시할 툴바
-				headerToolbar: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-				},
-				initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
-				navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
-				editable: true, // 수정 가능 여부
-				selectable: true, // 달력 일자 드래그 설정가능
-				nowIndicator: true, // 현재 시간 마크
-				dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+more)
-				locale: 'ko', // 한국어 설정
-				select: function(arg) {
-					insertModalOpen(arg);	//일자 클릭 시 모달 호출
-			    },
-			    eventClick: function(arg) {
-					insertModalOpen(arg);	//이벤트 클릭 시 모달 호출
-			    },
-			 	eventChange: function(arg){
-					//allDay true로 바꾸면 end가 없어서 만듬
-					if(arg.event.end == null){
-						var end = new Date();
-						end.setDate(arg.event.start.getDate()+1);
-						arg.event.setEnd(end);	
-					}
-			 	},
-			 	eventDrop: function(arg){
-			  		insertModalOpen(arg);		//이벤트 드래그드랍 시 모달 호출
-			 	},
-				eventResize: function(arg){
-			  		insertModalOpen(arg);		//이벤트 사이즈 변경시(일정변경) 모달 호출
-			 	},	
-				// 테스트 이벤트
-				events: [
-					{
-						title: 'All Day Event',
-						start: '2021-09-01',
-					},
-					{
-						groupId: 999,
-						title: 'Test Event1',
-						start: '2021-09-09T16:00:00'
-					},
-					{
-						groupId: 999, // groupId가 같은 반복 이벤트 생성
-						title: 'Test Event2',
-						start: '2021-09-16T16:00:00'
-					},
-					{
-						title: 'Click for Naver',
-						url: 'https://www.naver.com/', // 클릭시 해당 url로 이동
-						start: '2021-09-28'
-					},
-					{
-						groupId: 'blueEvents', // groupId가 같으면 드래그할 때 같이 이동, 없으면 따로 이동 가능 
-						daysOfWeek: [ '4' ],
-						startTime: '10:45:00',
-						endTime: '12:45:00',
-						color: 'red'
-				    },
-				]
-			});
-			// 캘린더 랜더링
-			calendar.render();
-		});
-		function insertModalOpen(arg){
-			$("#calendarModal").modal("show");
-		
-			$("#addCalendar").on("click",function(){  // modal의 추가 버튼 클릭 시
-                var content = $("#calendar_content").val();
-                var start_date = $("#calendar_start_date").val();
-                var end_date = $("#calendar_end_date").val();
-                
-                //내용 입력 여부 확인
-                if(content == null || content == ""){
-                    alert("내용을 입력하세요.");
-                }else if(start_date == "" || end_date ==""){
-                    alert("날짜를 입력하세요.");
-                }else if(new Date(end_date)- new Date(start_date) < 0){ // date 타입으로 변경 후 확인
-                    alert("종료일이 시작일보다 먼저입니다.");
-                }else{ // 정상적인 입력 시
-                    var obj = {
-                        "title" : content,
-                        "start" : start_date,
-                        "end" : end_date
-                    }//전송할 객체 생성
-                    console.log(obj); //서버로 해당 객체를 전달해서 DB 연동 가능
-                }
-            });
-        }
-	})();
-	</script>
 </html>

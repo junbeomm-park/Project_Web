@@ -8,8 +8,15 @@
 	</definition>
 	<definition name="signTemplate" template="/WEB-INF/member/sign.jsp">
 	</definition>
+	<definition name="find_id" template="/WEB-INF/member/find_id.jsp">
+	</definition>
 	<definition name="find_id_page" template="/WEB-INF/member/find_id_page.jsp">
 	</definition>
+	<definition name="find_pass" template="/WEB-INF/member/find_pass.jsp">
+	</definition>
 	<definition name="find_pass_page" template="/WEB-INF/member/find_pass_page.jsp">
+	</definition>
+	<definition name="loginok"  extends = "mainTemplate">
+	<put-attribute name="content" value="/WEB-INF/layout/index.jsp"/>
 	</definition>
 </tiles-definitions> 

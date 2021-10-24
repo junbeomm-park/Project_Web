@@ -9,7 +9,6 @@
 	</definition>
 	<definition name="tour/detail" extends="subTemplate">
 		<put-attribute name="content1" value="/WEB-INF/place/placeInfo.jsp"/>
-		<put-attribute name="content2" value="/WEB-INF/place/whether.jsp"/>
 		<put-attribute name="content3" value="/WEB-INF/place/map.jsp"/>
 		<put-attribute name="content4" value="/WEB-INF/course/course.jsp"/>
 		<put-attribute name="content5" value="/WEB-INF/review/review.jsp"/>

@@ -10,23 +10,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" href="/tour/common/css/course.css">
 	</head>
 	<body>
 		<%  ArrayList<PlaceVO> courselist = (ArrayList<PlaceVO>) request.getAttribute("courselist");
 			int size = courselist.size();
 			CourseVO coursename = (CourseVO)request.getAttribute("coursename");
 		%>	
+		<div class="container">
 			<input type="hidden" name="spotareaid" value="${place.spotareaid}">
-			<div style="border:2px solid blue; width:100%; height:300px; font-size: 15pt;">
-				<h1><%=coursename.getCoursename()%></h1>
-				
-				<%		    							
-															for(int i = 0; i < courselist.size() ; i++) { 
-															PlaceVO course = courselist.get(i);
-				%>
-				<span> <%= course.getSpotname() %>&nbsp;&nbsp;→&nbsp;&nbsp; </span>
-				<%              } 
-				%>
+			<div class="courseinfo">
+				<div class="infonav">추천코스</div>
+				<div class="coursename"><%=coursename.getCoursename()%></div>
+				<div class="box">
+					<div class="coursebox">
+						<%		    							
+							for(int i = 0; i < courselist.size() ; i++) { 
+							PlaceVO course = courselist.get(i);
+						%>
+						<div class="spotbox"> 
+							<%= course.getSpotname() %> 
+							<div><img class="spotimg" src="/tour/images/<%= course.getImage()%>"/></div>
+						</div>
+						<% } %>
+					</div>
+				</div>
 			</div>
+		</div>
 	</body>
 </html>

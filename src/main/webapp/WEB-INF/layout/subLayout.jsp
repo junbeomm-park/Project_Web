@@ -6,6 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<style type="text/css">
+			.content{
+				margin-bottom: 80px;
+			}
+		</style>
 	</head>
 	<body>
 		<div>
@@ -25,20 +30,20 @@
 	      </div>
 	    </div>
 		<div class="container">
-			<div>
+			<div class="content">
 				<!-- 이곳에 content화면을 연결하세요" -->
 				<tiles:insertAttribute name="content1"></tiles:insertAttribute>
 			</div>
-			<div>
+			<div class="content">
 				<tiles:insertAttribute name="content2"></tiles:insertAttribute>
 			</div>
-			<div>
+			<div class="content">
 				<tiles:insertAttribute name="content3"></tiles:insertAttribute>
-			</div>
-			<div>
+			</div >
+			<div class="content">
 				<tiles:insertAttribute name="content4"></tiles:insertAttribute>
 			</div>
-			<div>
+			<div class="content">
 				<tiles:insertAttribute name="content5"></tiles:insertAttribute>
 			</div>
 		</div>

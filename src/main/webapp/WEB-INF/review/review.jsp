@@ -17,7 +17,8 @@
 		%>
 		<form>
 			<div class="reviewlist">
-				<div style="padding-top: 30px">
+				<div class="infonav">Review</div>
+				<div>
 					<table class="table">
 						<thead>
 							<tr>

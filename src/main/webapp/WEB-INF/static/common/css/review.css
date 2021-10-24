@@ -44,10 +44,22 @@
 }
 button { 
 	margin-bottom: 100px;
-	width: 100px; 
-	background-color:#bae6f8;
+	width: 100px;
+	border: 2px solid #578fd5;
 	border-radius: 30px;
-	border: none;
+	font-color: #578fd5;
 	margin-top: 5px;
-	
+	font-weight: bold;
+	background-color: white;
+	position: 500px;
 }
+.infonav{
+	font-size: 20px; 
+	font-weight: bold;
+	border-left: 5px solid #9bbde6;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	margin-top: 30px;
+}
+

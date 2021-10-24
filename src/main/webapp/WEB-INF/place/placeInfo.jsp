@@ -62,7 +62,7 @@
 					</a>
 			</div> --%>
 			<div class="info">
-				<div style="font-size: 22px; font-weight: bold;">상세정보</div>
+				<div class="infonav">상세정보</div>
 				<table>
 					<tr>
 						<td id="head" class="col-sm-1">지역</td>

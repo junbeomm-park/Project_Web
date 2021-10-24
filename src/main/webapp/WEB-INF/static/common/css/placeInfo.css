@@ -4,12 +4,12 @@ table{
 }
 .placename{
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 	font-size: 40px;
 	text-align: center;
 	font-weight: bold;
-	text-decoration: overline underline;
-	text-underline-position: under;
+	border-bottom: 2px solid #9bbde6;
+	border-top: 2px solid #9bbde6;
 }
 #head{
 	font-weight: bold;
@@ -23,7 +23,7 @@ tr{
 	line-height: 2rem;
 }
 .info{
-	margin-top: 40px;
+	margin-top: 80px;
 	margin-bottom: 50px;
 }
 img{
@@ -31,10 +31,19 @@ img{
 	margin-right: auto;
 	object-fit: contain;
 	height: 500px;
+
 }
 
 .item active,.item {
 	text-align: center;
+}
+.infonav{
+	font-size: 20px; 
+	font-weight: bold;
+	border-left: 5px solid #9bbde6;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
 }
 
 .slider{

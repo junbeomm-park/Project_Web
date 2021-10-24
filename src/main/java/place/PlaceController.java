@@ -35,10 +35,19 @@ public class PlaceController {
       List<PlaceVO> placelist = service.findByCategory(category); //dao에서 결과가 넘어오는 경우 디버깅 작업은 넘어오는 데이터를
     // sysout으로 컨트롤러 단까지 모두 출력
      mav.addObject("placelist", placelist);
-     mav.addObject("category", category); return mav; 
+     mav.addObject("category", category); 
+     return mav; 
    
    }
-   
+	@RequestMapping("/place/search.do")
+	public ModelAndView search(String search) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>)service.searchList(search);
+		mav.addObject("placelist", placelist);
+		mav.addObject("category", "all");
+		mav.setViewName("tour");
+		return mav;
+	}
 
 //   @RequestMapping("/place/tourdetail.do")
 //   public ModelAndView tourDetail() {

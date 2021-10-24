@@ -49,8 +49,7 @@ public class PlaceDAOImpl implements PlaceDAO {
 
 	@Override
 	public List<PlaceVO> searchList(String search) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("tour.place.search", search);
 	}
 
 	@Override

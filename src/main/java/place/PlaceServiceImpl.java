@@ -58,8 +58,7 @@ public class PlaceServiceImpl implements PlaceService {
 
 	@Override
 	public List<PlaceVO> searchList(String search) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.searchList(search);
 	}
 
 	@Override

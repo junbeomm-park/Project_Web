@@ -32,7 +32,7 @@ public class memberController {
 			viewName = "find_id_page";
 		} else {
 			// 아이디찾기실패
-			viewName = "find_id";
+			viewName = "redirect:/find_id.do";
 		}
 		mav.setViewName(viewName);
 		mav.addObject("findid", findid);
@@ -50,7 +50,7 @@ public class memberController {
 			viewName = "find_pass_page";
 		} else {
 			// 비번찾기실패
-			viewName = "find_pass";
+			viewName = "redirect:/find_pass.do";
 		}
 		mav.setViewName(viewName);
 		mav.addObject("findpass", passOkUser);
@@ -66,9 +66,9 @@ public class memberController {
 		if(loginOkUser!=null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOkUser", loginOkUser);
-			viewName = "loginok";
+			viewName = "redirect:/index.do";
 		}else {
-			viewName = "login";
+			viewName = "redirect:/login.do";
 		}
 		mav.setViewName(viewName);
 		return mav;

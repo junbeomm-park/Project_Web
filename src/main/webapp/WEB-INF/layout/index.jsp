@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@page import="place.PlaceVO"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -152,83 +154,86 @@
             <h2 class="mb-4"><strong>Featured</strong> Destination</h2>
           </div>
         </div>
+
     		<div class="row">
+  
     			<div class="col-md-12">
     				<div class="destination-slider owl-carousel ftco-animate">
     					<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=7004&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/gaetaesa.jpg  );">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(논산)개태사</a></h3>
 		    						<span class="listing">15 Listing</span>
 		    					</div>
 		    				</div>
 	    				</div>
+
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=5002&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/jeonju02.jpg  );">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">San Francisco, USA</a></h3>
+		    						<h3><a href="#">(전주)한지박물관</a></h3>
 		    						<span class="listing">20 Listing</span>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-3.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=1002&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/gangneung01.jpg  );">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">Lodon, UK</a></h3>
+		    						<h3><a href="#">(강릉)참소리박물관</a></h3>
 		    						<span class="listing">10 Listing</span>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-4.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=3001&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/kung3001.jpeg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">Lion, Singapore</a></h3>
+		    						<h3><a href="#">(봉화)다덕약수관광지</a></h3>
 		    						<span class="listing">3 Listing</span>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-5.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=7001&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/mok.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">Australia</a></h3>
+		    						<h3><a href="#">(계룡)괴목정</a></h3>
 		    						<span class="listing">3 Listing</span>
 		    					</div>
 		    				</div>
 	    				</div>
 	    				<div class="item">
 		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/destination-6.jpg);">
+		    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=5003&state=READ" class="img d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/jinan01.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(진안)마이산</a></h3>
 		    						<span class="listing">3 Listing</span>
 		    					</div>
 		    				</div>

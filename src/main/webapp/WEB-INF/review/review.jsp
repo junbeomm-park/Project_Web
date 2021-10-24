@@ -34,7 +34,7 @@
 									ReviewVO review = reviewlist.get(i);
 							%>
 								<tr>
-									<td>${loginOkUser.id}</td>
+									<td><%=review.getId() %></td>
 									<td><%=review.getScore() %></td>
 									<td><%=review.getContent() %></td>
 									<td><%=review.getWrite_date() %></td>
@@ -46,7 +46,7 @@
 			</div>
 		</form>
 		<form action="/tour/review/insert.do">
-			<input type= "hidden" name= "id" value="lee">
+			<input type= "hidden" name= "id" value="${loginOkUser.mem_id}">
 			<input type= "hidden" name= "spotareaid" value="${place.spotareaid}">
 			<div class="container">
 					<div>

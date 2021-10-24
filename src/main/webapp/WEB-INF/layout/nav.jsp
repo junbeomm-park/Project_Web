@@ -68,7 +68,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/tour/place/tourPage.do" class="nav-link">Tour</a></li>
+	          <li class="nav-item"><a href="/tour/place/tour.do?category=all" class="nav-link">Tour</a></li>
 	          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
 	          <li class="nav-item"><a href="/tour/planner.do" class="nav-link">Planner</a></li>
 	        <%if(user==null){ %>

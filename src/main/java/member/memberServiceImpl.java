@@ -1,7 +1,5 @@
 package member;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
@@ -14,26 +12,28 @@ public class memberServiceImpl implements memberService {
 		dao.insert(user);
 		return 0;
 	}
-//	@Override
-//	public int find_id(memberVO user) {
-//		System.out.println("서비스단 insert => dao의 insert를 호출하며 매개변수로 넘어온 객체 전달:"+user);
-//		dao.insert(user);
-//		return 0;
-//	}
-
 	@Override
-	public List<memberVO> getMemberList() {
-		return dao.getMemberList();
+	public memberVO findid(memberVO memberUser) {
+		return dao.findid(memberUser);
 	}
+	@Override
+	public memberVO findpass(memberVO memberUser) {
+		return dao.findpass(memberUser);
+	}
+	@Override
+	public memberVO login(memberVO loginUser) {
+		return dao.login(loginUser);
+	}
+//	
+//	@Override
+//	public List<memberVO> getMemberList() {
+//		return dao.getMemberList();
+//	}
 //
 //	@Override
 //	public boolean idCheck(String id) {
 //		return dao.idCheck(id);
 //	}
 //
-//	@Override
-//	public LoginVO login(LoginVO loginUser) {
-//		return dao.login(loginUser);
-//	}
 
 }

@@ -1,30 +1,29 @@
 package member;
 
 public class memberVO {
-	private String mem_id; 
+	private String mem_id;
 	private String mem_nm;
 	private String gender;
 	private String pwd;
 	private String pwd_check;
 	private String email;
-	private String birth; 
+	private String birth;
 	private String cellno;
 	private String addr;
-	
+
 	public memberVO() {
-		System.out.println("memberVO의 기본생성자");
 	}
 
-	//member용
+	// login용
 	public memberVO(String mem_id, String pwd) {
 		super();
 		this.mem_id = mem_id;
 		this.pwd = pwd;
 	}
 
-	//insert용 + select용
-	public memberVO(String mem_id, String mem_nm, String gender, String pwd, String pwd_check, String email, String birth,
-			String cellno, String addr) {
+	// insert용 + select용
+	public memberVO(String mem_id, String mem_nm, String gender, String pwd, String pwd_check, String email,
+			String birth, String cellno, String addr) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_nm = mem_nm;
@@ -36,13 +35,25 @@ public class memberVO {
 		this.cellno = cellno;
 		this.addr = addr;
 	}
-	//find_id용
-//	public memberVO(String mem_nm, String gender, String birth) {
-//		super();
-//		this.mem_nm = mem_nm;
-//		this.gender = gender;
-//		this.birth = birth;
-//	}
+	// find_id용
+	public memberVO(String mem_nm, String gender, String birth, String email) {
+		super();
+		this.mem_nm = mem_nm;
+		this.gender = gender;
+		this.birth = birth;
+		this.email = email;
+	}
+	// find_pass용
+	public memberVO(String mem_id, String mem_nm, String gender, String birth, String email, String cellno) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_nm = mem_nm;
+		this.gender = gender;
+		this.birth = birth;
+		this.email = email;
+		this.cellno = cellno;
+	}
+
 	@Override
 	public String toString() {
 		return "memberVO [mem_id=" + mem_id + ", mem_nm=" + mem_nm + ", gender=" + gender + ", pwd=" + pwd
@@ -50,7 +61,6 @@ public class memberVO {
 				+ ", addr=" + addr + "]";
 	}
 
-	
 	public String getMem_id() {
 		return mem_id;
 	}

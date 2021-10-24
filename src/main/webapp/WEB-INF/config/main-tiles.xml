@@ -24,8 +24,5 @@
 	<definition name="index" extends="mainTemplate"/>
 	<definition name="login" extends="loginTemplate"/>
 	<definition name="sign" extends="signTemplate"/>
-	<definition name="find" extends="findTemplate"/>
-	
-	
 	
 </tiles-definitions>

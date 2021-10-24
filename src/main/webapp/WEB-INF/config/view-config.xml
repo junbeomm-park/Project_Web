@@ -11,7 +11,5 @@
 	<!-- <view-controller path="/place/tourPage.do" view-name="place"/> -->
 	<view-controller path="/contact/contactPage.do" view-name="contact"/>
 	<view-controller path="/planner/plannerPage.do" view-name="planner"/>
-	<view-controller path="/member/loginPage.do" view-name="login"/>
-	<view-controller path="/member/find_pass_page.do" view-name="find_pass"/>
 	<!-- test -->
 </beans:beans>

@@ -1,3 +1,4 @@
+<%@page import="member.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +7,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회원가입</title>
+<title>아이디찾기</title>
+<% member.memberVO findid = (member.memberVO) request.getAttribute("findid"); %>
 <!-- Bootstrap CSS -->
 <!-- favicon -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -41,46 +43,23 @@ body {
 </style>
 </head>
 <body>
-	<form method="post" action="/tour/member/find_id.do">
+	<form action=" ">
 		<div class="container">
 			<div class="input-form-backgroud row">
 				<div class="input-form col-md-12 mx-auto">
-					<h4 class="mb-3">아이디 찾기</h4>
-					<!-- <form class="validation-form" novalidate> -->
-					<div class="mb-3">
-						<label for="name">이름</label> <input type="text"
-							class="form-control" id="name" name="mem_nm"
-							placeholder="이름을 입력해주세요." value="" required>
-						<div class="invalid-feedback">이름을 입력해주세요.</div>
+					<div class="col-md-12">
+						<label for="nickname"><h1>찾고자 하는 아이디는</h1></label> <br> <font
+							size="15" face="HY견고딕" color="red"><%=findid.getMem_id()%></font><label
+							for="nickname"><h1>입니다.</h1></label>
 					</div>
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="nickname">생년월일</label> <input type="date"
-								class="form-control" id="date" name="birth" placeholder=""
-								value="" required>
-						</div>
-						<div class="col-md-6 mb-3">
-							<label for="nickname">성별</label> <select class="form-control"
-								id="gender" name="gender" required>
-								<option value="남자">남자</option>
-								<option value="여자">여자</option>
-							</select>
-						</div>
-					</div>
-					<div class="mb-3">
-						<label for="email">이메일</label> <input type="email"
-							class="form-control" id="email" name="email"
-							placeholder="you@example.com" required>
-						<div class="invalid-feedback">이메일을 입력해주세요.</div>
-					</div>
-					<button class="btn btn-primary btn-lg btn-block" type="submit">아이디
-						찾기</button>
+					<a class="btn btn-primary btn-lg btn-block" href="/tour/login.do">로그인
+						페이지로</a>
 				</div>
 			</div>
-			<footer class="my-3 text-center text-small">
-				<p class="mb-1">&copy; 2021 YD</p>
-			</footer>
 		</div>
+		<footer class="my-3 text-center text-small">
+			<p class="mb-1">&copy; 2021 YD</p>
+		</footer>
 	</form>
 </body>
 </html>

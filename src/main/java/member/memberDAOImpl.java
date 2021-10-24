@@ -1,10 +1,9 @@
 package member;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 //MyBatis에서 제공하는 기능을 이용해서 DB 액세스 - CLRUD처리
 @Repository
 public class memberDAOImpl implements memberDAO {
@@ -15,17 +14,27 @@ public class memberDAOImpl implements memberDAO {
 		sqlSession.insert("tour.member.insert", user);
 		return 0;
 	}
-//	@Override
-//	public int find_id(memberVO user) {
-//		System.out.println("member테이블에 insert:"+user);
-//		sqlSession.insert("tour.member.find_id", user);
-//		return 0;
-//	}
-
 	@Override
-	public List<memberVO> getMemberList() {
-		return  sqlSession.selectList("tour.member.list");
+	public memberVO findid(memberVO memberUser) {
+		memberVO memberOkUser = sqlSession.selectOne("tour.member.find_id", memberUser);
+		return memberOkUser;
 	}
+	@Override
+	public memberVO findpass(memberVO memberUser) {
+		memberVO memberOkUser = sqlSession.selectOne("tour.member.find_pass", memberUser);
+		return memberOkUser;
+	}
+	@Override
+	public memberVO login(memberVO loginUser) {
+		System.out.println("loginUser=>"+loginUser +"확인2");
+		memberVO loginOkUser = sqlSession.selectOne("tour.member.login/ok", loginUser);
+		System.out.println("결과=>"+loginOkUser);
+		return loginOkUser;
+	}
+//	@Override
+//	public List<memberVO> getMemberList() {
+//		return  sqlSession.selectList("tour.member.list");
+//	}
 //
 //	@Override
 //	public boolean idCheck(String id) {
@@ -39,13 +48,7 @@ public class memberDAOImpl implements memberDAO {
 //		return result; //아이디가 없으면 false 
 //	}
 //
-//	@Override
-//	public LoginVO login(LoginVO loginUser) {
-//		System.out.println("loginUser=>"+loginUser);
-//		LoginVO loginOkUser = sqlSession.selectOne("tour.member.login", loginUser);
-//		System.out.println("결과=>"+loginOkUser);
-//		return loginOkUser;
-//	}
+
 
 }
 

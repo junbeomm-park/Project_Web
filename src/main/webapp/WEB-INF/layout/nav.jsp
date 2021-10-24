@@ -1,3 +1,4 @@
+<%@page import="member.memberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
@@ -55,6 +56,7 @@
 		</style>
 	</head>
 	<body>
+	<% memberVO user = (memberVO) session.getAttribute("loginOkUser"); %>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="/tour/index.do">tour place</a>
@@ -66,11 +68,14 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/tour/place/tour.do?category=all" class="nav-link">Tour</a></li>
+	          <li class="nav-item"><a href="/tour/place/tourPage.do" class="nav-link">Tour</a></li>
 	          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
 	          <li class="nav-item"><a href="/tour/planner.do" class="nav-link">Planner</a></li>
-	          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>login</span></a></li>
-	          
+	        <%if(user==null){ %>
+	          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>Login</span></a></li>
+	        <%}else{ %>
+	          <li class="nav-item cta"><a href="/tour/member/logout.do" class="nav-link"><span>LogOut</span></a></li>
+	        <%} %>
 	        </ul>
 	      </div>
 	    </div>

@@ -12,6 +12,9 @@
 	<select id="find_pass" resultType="member" parameterType="String">
 		select * from tb_mem where mem_id = #{mem_id} and birth = #{birth} and gender = #{gender} and mem_nm = #{mem_nm} and email = #{email} and cellno = #{cellno}
 	</select>
+	<select id="login/ok" resultType="member" parameterType="member">
+		select * from tb_mem where mem_id = #{mem_id} and pwd=#{pwd}
+	</select>
 	
 <!-- 	<select id="check" resultType="member" parameterType="String">
 		select * from member where id = #{id}

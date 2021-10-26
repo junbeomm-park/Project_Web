@@ -14,10 +14,10 @@ public class IndexController {
 	public String contact() {
 		return "contact";
 	}
-	@RequestMapping("/planner.do")
-	public String planner() {
-		return "planner";
-	}
+//	@RequestMapping("/planner.do")
+//	public String planner() {
+//		return "planner";
+//	}
 	@RequestMapping("/about.do")
 	public String about() {
 		return "about";

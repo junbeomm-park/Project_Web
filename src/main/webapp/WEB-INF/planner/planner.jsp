@@ -72,15 +72,61 @@
 			  background-image: url('/img/searchicon.png');
 			  background-position: 10px 12px;
 			  background-repeat: no-repeat;
-			  width: 90%;
+			  width: 70%;
+			  height: 50px;
 			  font-size: 16px;
 			  padding: 12px 20px 12px 40px;
 			  border: 1px solid #cccccc;
 			  border-radius: 10px;
 			  margin-bottom: 12px;
-			  margin-right: 20px;
+			  margin-right: 10px;
+			  margin-left: 20px;
 			}
-			
+			.placeimg{
+				width: 80px;
+				height: 80px;
+				
+			}
+			.placebox{
+				margin: 10px;
+				border-radius: 10px;
+				border: 0.5px solid #bfcdf0;
+				width: 85%; 
+				height: 100px;
+			}
+			.placerow{
+				margin: 10px;
+			}
+			.placename{
+				font-weight: bold;
+				font-size: 12pt;
+				padding-left: 12px;
+			}
+			.areaname{
+				font-size: 10pt;
+				padding-left: 10px;
+				color: gray;
+			}
+			.placebtn {
+				position: absolute; 
+				right: 0px; 
+				bottom: 0px;
+				width: 30px;
+				height: 30px;
+				border:none;
+				outline: none;
+				border-radius: 20px;
+				cursor: pointer;
+			}
+			.searchbtn{
+				width: 30px;
+				height: 30px;
+				border:none;
+				outline: none;
+				cursor: pointer;
+				background-color:#f8faff;
+				margin-top: 5px;
+			}
 		</style>
 	</head>
 	<body>
@@ -88,7 +134,6 @@
 	
 				int size = placelist.size();
 %>  
-		<form action="/tour/planner.do">
 		  	<div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/bg-Planner.jpg');">
 		    	<div class="overlay"></div>
 		      	<div class="container">
@@ -184,24 +229,39 @@
 					<div class="col-md-3">
 						<div class="row contentR">
 							<div class="well col-xs-12 text-left">
-								<input type="text" id="myInput" onkeyup="myFunction()" placeholder="강원도 강릉 여행">
-
-
-								<ul id="myUL">
-								<%		    							
-											for(int i = 0; i < placelist.size() ; i++) { 
-											PlaceVO place = placelist.get(i);
-%>
-								  <li><a href="#"> <%= place.getSpotname() %> </a></li>
-								  <%} %>
-								</ul>
+								<form action="/tour/planner/search.do">
+									<div class="row">
+											<input type="text" id="myInput" onkeyup="myFunction()" name="search" placeholder="관광지 검색">
+											<button class="searchbtn" type="submit"><img class="searchbtn" alt="" src="/tour/images/search.png"></button>
+									</div>
+									<div style="height: 600px; overflow: auto">
+									<%		    							
+												for(int i = 0; i < placelist.size() ; i++) { 
+												PlaceVO place = placelist.get(i);
+									%>
+										<div class="placebox">
+											<div class="placerow">
+											<div class="row">
+												<div class="col-md-3" style=" margin-right:10px;">
+													<img class="placeimg" src="/tour/images/<%= place.getImage()%>"/>
+												</div>
+												<div class="col-md-8">
+													<div class="placename"><%= place.getSpotname() %></div>
+													<div class="areaname">&nbsp;&nbsp;<%=place.getCategory() %></div>
+													<button class="placebtn" type="submit"><img class="placebtn" alt="" src="/tour/images/plusbtn.PNG"></button>
+												</div>
+											</div>
+											</div>
+										</div>
+										<%} %>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 					 
 				</div>
 		  	</div>	<!-- END Content -->
-		</form>
 	</body>
 	<script src="/tour/common/js/planner.js"></script>
 </html>

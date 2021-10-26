@@ -39,5 +39,14 @@ public class PlannerController {
      return mav; 
    
    }
-
+   
+	@RequestMapping("/planner/search.do")
+	public ModelAndView search(String search) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>)service.searchList(search);
+		mav.addObject("placelist", placelist);
+		mav.addObject("category", "all");
+		mav.setViewName("planner");
+		return mav;
+	}
 }

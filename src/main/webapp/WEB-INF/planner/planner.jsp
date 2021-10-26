@@ -1,5 +1,9 @@
+<%@page import="place.PlaceVO"%>
+<%@page import="course.CourseVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,6 +84,10 @@
 		</style>
 	</head>
 	<body>
+ <% 				ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
+	
+				int size = placelist.size();
+%>  
 		<form action="/tour/planner.do">
 		  	<div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/bg-Planner.jpg');">
 		    	<div class="overlay"></div>
@@ -172,20 +180,25 @@
 					        </div> <!-- modal-dialog end -->
 					    </div>	<!-- modal end -->
 					</div>
+   
 					<div class="col-md-3">
 						<div class="row contentR">
 							<div class="well col-xs-12 text-left">
 								<input type="text" id="myInput" onkeyup="myFunction()" placeholder="강원도 강릉 여행">
+
+
 								<ul id="myUL">
-								  <li><a href="#">(강릉)대관령 양떼목장</a></li>
-								  <li><a href="#">(강릉)참소리박물관</a></li>
-								  <li><a href="#">(강릉)오죽헌</a></li>
-								  <li><a href="#">(강릉)경포대</a></li>
-								  <li><a href="#">(강릉)대관령 자연휴양림</a></li>
+								<%		    							
+											for(int i = 0; i < placelist.size() ; i++) { 
+											PlaceVO place = placelist.get(i);
+%>
+								  <li><a href="#"> <%= place.getSpotname() %> </a></li>
+								  <%} %>
 								</ul>
 							</div>
 						</div>
 					</div>
+					 
 				</div>
 		  	</div>	<!-- END Content -->
 		</form>

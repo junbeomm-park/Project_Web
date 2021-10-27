@@ -41,11 +41,6 @@ public class PlaceDAOImpl implements PlaceDAO {
 		return sqlSession.selectList("tour.place.category", category);
 	}
 
-	@Override
-	public int insert(PlaceVO place) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public List<PlaceVO> searchList(String search) {
@@ -53,15 +48,8 @@ public class PlaceDAOImpl implements PlaceDAO {
 	}
 
 	@Override
-	public List<PlaceVO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<PlaceVO> pageList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<PlaceVO> addrList(String search) {
+		return sqlSession.selectList("tour.place.addrsearch", search);
 	}
 
 	@Override
@@ -75,6 +63,7 @@ public class PlaceDAOImpl implements PlaceDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 
 

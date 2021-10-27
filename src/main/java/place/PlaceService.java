@@ -11,6 +11,7 @@ public interface PlaceService {
 	int txinsert(PlaceVO Place);
 	int insert(PlaceVO Place);
 	List<PlaceVO> searchList(String search);
+	List<PlaceVO> addrList(String search);
 	List<PlaceVO> searchList(String tag,String search);
 	List<PlaceVO> pageList();
 	List<PlaceVO> courseList(String spotareaid);
@@ -21,6 +22,7 @@ public interface PlaceService {
 	
 	List<PlaceVO> findByCategory(String category);
 	List<PlaceVO> getMemeberlist();
+	List<PlaceVO> addrList();
 	
 }
 

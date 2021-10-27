@@ -39,6 +39,15 @@ public class PlannerController {
      return mav; 
    
    }
+   @RequestMapping("/createplan.do") 
+   public ModelAndView createPlanView() { 
+      ModelAndView mav =  new ModelAndView("createplan"); 
+      List<PlaceVO> placelist = service.placeList(); //dao에서 결과가 넘어오는 경우 디버깅 작업은 넘어오는 데이터를
+    // sysout으로 컨트롤러 단까지 모두 출력
+     mav.addObject("placelist", placelist);
+     
+     return mav;
+   }
    
 	@RequestMapping("/planner/search.do")
 	public ModelAndView search(String search) {
@@ -47,6 +56,16 @@ public class PlannerController {
 		mav.addObject("placelist", placelist);
 		mav.addObject("category", "all");
 		mav.setViewName("planner");
+		return mav;
+	}
+
+	@RequestMapping("/createplan/search.do")
+	public ModelAndView search2(String search) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>)service.addrList(search);
+		mav.addObject("placelist", placelist);
+		mav.addObject("category", "all");
+		mav.setViewName("createplan");
 		return mav;
 	}
 }

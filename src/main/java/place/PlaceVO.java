@@ -16,6 +16,7 @@ public class PlaceVO {
 	String latitude;
 	String longitude;
 	String tag;
+	String coursename;
 	MultipartFile[] files;
 	
 	public PlaceVO(){
@@ -23,7 +24,7 @@ public class PlaceVO {
 	}
 
 	public PlaceVO(String spotareaid, String spotname, String spotareaname, String addr, String courseid, String category,
-			String image, String content, String latitude, String longitude, String tag,
+			String image, String content, String latitude, String longitude, String tag, String coursename,
 			MultipartFile[] files) {
 		super();
 		this.spotareaid = spotareaid;
@@ -37,15 +38,24 @@ public class PlaceVO {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.tag = tag;
+		this.coursename = coursename;
 		this.files = files;
 	}
 	@Override
 	public String toString() {
 		return "PlaceVO [spotareaid=" + spotareaid + ", spotname=" + spotname + ", spotareaname=" + spotareaname + ", addr=" + addr
 				+ ", courseid=" + courseid + ", category=" + category + ", image=" + image + ", content=" + content
-				+ ", latitude=" + latitude + ", longitude=" + longitude + ", tag=" + tag + "]";
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", tag=" + tag +", coursename=" + coursename + "]";
 	}
 
+
+	public String getCoursename() {
+		return coursename;
+	}
+
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
+	}
 
 	public String getSpotareaid() {
 		return spotareaid;

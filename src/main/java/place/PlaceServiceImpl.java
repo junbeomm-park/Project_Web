@@ -60,6 +60,10 @@ public class PlaceServiceImpl implements PlaceService {
 	public List<PlaceVO> searchList(String search) {
 		return dao.searchList(search);
 	}
+	@Override
+	public List<PlaceVO> addrList(String search) {
+		return dao.addrList(search);
+	}
 
 	@Override
 	public List<PlaceVO> searchList(String tag, String search) {
@@ -91,6 +95,13 @@ public class PlaceServiceImpl implements PlaceService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<PlaceVO> addrList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }

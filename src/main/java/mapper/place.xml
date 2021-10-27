@@ -21,6 +21,9 @@
 	<select id="search" parameterType="String" resultType="place">
 		select * from place where spotname like '%'||#{search}||'%'
 	</select>
+	<select id="addrsearch" parameterType="String" resultType="place">
+		select * from place where addr like '%'||#{search}||'%'
+	</select>
 <!-- 	<select id="dynamicsql" resultType="place" parameterType="Map">
 		select * from place
 		<where>

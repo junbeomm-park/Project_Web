@@ -194,13 +194,18 @@
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-start">시작</label> 
-													<input class="inputModal" type="date" name="edit-start" id="edit-start" />
+													<div class="input-group date">
+														<input class="inputModal" type="text" name="edit-start" id="edit-start" />
+														<div class="input-group-addon">
+													        <span class="glyphicon glyphicon-th"></span>
+													    </div>
+													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-end">끝</label> 
-													<input class="inputModal" type="date" name="edit-end" id="edit-end" />
+													<input class="inputModal" type="text" name="edit-end" id="edit-end" />
 												</div>
 											</div>
 											<div class="row">
@@ -214,7 +219,7 @@
 									<!-- modal Footer -->
 									<div class="modal-footer addEvent">
 										<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-primary" id="save-event">저장</button>
+										<button type="button" class="btn btn-primary" id="save-event" >저장</button>
 									</div>
 									<div class="modal-footer modifyEvent">
 	                        			<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>

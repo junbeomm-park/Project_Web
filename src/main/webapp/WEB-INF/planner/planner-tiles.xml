@@ -8,7 +8,9 @@
 		<put-attribute name="content" value="/WEB-INF/planner/planner.jsp"/>
 			
 	</definition>
-	
+	<definition name="createplan" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/planner/createplan.jsp"/>
+	</definition>
 	
 	
 	

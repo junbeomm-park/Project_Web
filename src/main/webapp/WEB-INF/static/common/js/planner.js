@@ -81,6 +81,11 @@
 	});
 });	
 /*
+ * addPlaceEvents
+ */
+
+		
+/*
  * addEvents
  */
 var addEvent = function(info) {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="tour.planner">
+  	<insert id="insert" parameterType="planner">
+        insert into planner values(#{writer}, event_seq.nextval, #{title}, #{start_date}, #{end_date}, #{description}, 'true')
+  	</insert>
+  	<select id="list" resultType="planner" parameterType="String">
+  		select * from planner where writer=#{writer}
+  	</select>
+  </mapper>

@@ -118,6 +118,17 @@
 				border-radius: 20px;
 				cursor: pointer;
 			}
+			.btnimg{
+				position: absolute; 
+				right: 0px; 
+				bottom: 0px;
+				width: 30px;
+				height: 30px;
+				border:none;
+				outline: none;
+				border-radius: 20px;
+				cursor: pointer;
+			}
 			.searchbtn{
 				width: 30px;
 				height: 30px;
@@ -128,6 +139,7 @@
 				margin-top: 5px;
 			}
 		</style>
+		
 	</head>
 	<body>
  <% 				ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
@@ -176,26 +188,28 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
+								<form action="/tour/planner/insert.do">
 									<!-- modal body -->
+									<input type="hidden" name="writer" id="writer" value="${loginOkUser.mem_id}"/>
 									<div class="modal-body">
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-allDay">하루종일</label> 
-													<input class='allDayNewEvent' id="edit-allDay" type="checkbox">
+													<input class='allDayNewEvent' name="allDay" id="edit-allDay" type="checkbox">
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-title">일정명</label> 
-													<input class="inputModal" type="text" name="edit-title" id="edit-title" required="required" />
+													<input class="inputModal" type="text" name="title" id="edit-title" required="required" />
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-start">시작</label> 
 													<div class="input-group date">
-														<input class="inputModal" type="text" name="edit-start" id="edit-start" />
+														<input class="inputModal" type="text" name="start_date" id="edit-start" />
 														<div class="input-group-addon">
 													        <span class="glyphicon glyphicon-th"></span>
 													    </div>
@@ -205,13 +219,13 @@
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-end">끝</label> 
-													<input class="inputModal" type="text" name="edit-end" id="edit-end" />
+													<input class="inputModal" type="text" name="end_date" id="edit-end" />
 												</div>
 											</div>
 											<div class="row">
 												<div class="col-md-12">
 													<label class="col-md-3 mb-1" for="edit-desc">설명</label>
-													<textarea rows="4" cols="50" class="inputModal" name="edit-desc" id="edit-desc"></textarea>
+													<textarea rows="4" cols="50" class="inputModal" name="description" id="edit-desc"></textarea>
 												</div>
 											</div>
 										</div>
@@ -219,18 +233,19 @@
 									<!-- modal Footer -->
 									<div class="modal-footer addEvent">
 										<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-primary" id="save-event" >저장</button>
+										<button type="submit" class="btn btn-primary" id="save-event" >저장</button>
 									</div>
+								</form>
 									<div class="modal-footer modifyEvent">
 	                        			<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 	                        			<button type="button" class="btn btn-danger" id="deleteEvent">삭제</button>
 	                        			<button type="button" class="btn btn-primary" id="updateEvent">저장</button>
                     				</div>
-					            </div> <!-- modal-content end -->
-					        </div> <!-- modal-dialog end -->
-					    </div>	<!-- modal end -->
-					</div>
-   
+                    			</div>
+					          </div> <!-- modal-content end -->
+					      </div> <!-- modal-dialog end -->
+					  </div>	<!-- modal end -->
+  		
 					<div class="col-md-3">
 						<div class="row contentR">
 							<div class="well col-xs-12 text-left">
@@ -253,7 +268,7 @@
 												<div class="col-md-8">
 													<div class="placename"><%= place.getSpotname() %></div>
 													<div class="areaname">&nbsp;&nbsp;<%=place.getCategory() %></div>
-													<button class="placebtn" type="submit"><img class="placebtn" alt="" src="/tour/images/plusbtn.PNG"></button>
+													<button class="placebtn" type="submit" id="placebtn" onclick="addPlaceEvent()"><img class="btnimg" alt="" src="/tour/images/plusbtn.PNG"></button>
 												</div>
 											</div>
 											</div>
@@ -263,10 +278,232 @@
 								</form>
 							</div>
 						</div>
+					 </div>
 					</div>
-					 
 				</div>
 		  	</div>	<!-- END Content -->
 	</body>
-	<script src="/tour/common/js/planner.js"></script>
+	<!-- <script src="/tour/common/js/planner.js"></script> -->
+	  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	/**
+	 *  Planner main
+	 */
+	 var calendar = null;
+	 var events = [];
+	 var writer = $("#writer").val();
+	 document.addEventListener('DOMContentLoaded', function() {
+	    var calendarEl = document.getElementById('calendar');
+
+	    calendar = new FullCalendar.Calendar(calendarEl, {
+			expandRows: true, // 화면에 맞게 높이 재설정
+			slotMinTime: '06:00', // Day 캘린더에서 시작 시간
+			slotMaxTime: '02:00', // Day 캘린더에서 종료 시간
+			// 해더에 표시할 툴바
+			headerToolbar: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+			},
+			initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+			navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+			editable: true, // 수정 가능 여부
+			selectable: true, // 달력 일자 드래그 설정가능
+			nowIndicator: true, // 현재 시간 마크
+			dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+more)
+			locale: 'ko', // 한국어 설정
+			views: {
+			    dayGridMonth: {
+			      titleFormat: { month: 'long', year: 'numeric'}
+			    },
+			    timeGridWeek: {
+			      titleFormat: { month: 'long', year: 'numeric', day: 'numeric'}
+			    },
+			    timeGridDay: {
+			      titleFormat: { month: 'long', year: 'numeric', day: 'numeric'}
+			    },
+			    listWeek: {
+			      titleFormat: { month: 'long', year: 'numeric', day: 'numeric'}
+			    }
+			},
+			select: function(info) {
+				addEvent(info); // 이벤트 추가 function
+		    },
+		     eventClick: function(info) {
+				editEvent(info); // 이벤트 수정 function
+				
+			},
+
+			events:function(info, successCallback, failureCallback){
+	            $.ajax({
+	            	 url: "/tour/planner/list.do",
+		              type: "get",
+		              data:{"writer" : writer},
+	                   success: 
+	                       function(data) {
+	                           if(data!=null){
+	                                   $.each(data, function(index, element) {
+	                                         events.push({
+	                                        	 title: element.title,
+	         		            	             start : element.start_date,
+	         		        	        		 end : element.end_date,
+	         		        	        		 deacription : element.description,
+	         		        	        		 allDay : element.allDay
+	                                            });
+	                                     }); //.each()
+	                               console.log(events);
+	                           }//if end                           
+	                           successCallback(events);                               
+	                       }//success: function end                          
+	            }); //ajax end
+	        } //events:function end
+		
+	        // 테스트 이벤트
+			
+		});
+	    
+		// 캘린더 랜더링
+		calendar.render();
+
+		$(function () {
+			$('#datepicker').datepicker({ 
+				todayBtn: "linked",
+				language: "ko",
+				todayHighlight: true,
+				format: "yyyy-mm-dd",
+			})
+		});
+	});	
+	
+		  
+	/*
+	 * addEvents
+	 */
+	var addEvent = function(info) {
+		var start = moment(info.startStr).format('YYYY-MM-DD');
+		var end = moment(info.endStr).format('YYYY-MM-DD');
+		
+		$('.modal-title').html('새로운 일정');
+	    $('#edit-title').val('');
+	    $('#edit-start').val(start);
+	    $('#edit-end').val(end);
+	    $('#edit-desc').val('');
+	    $('#edit-allDay').prop('checked', true); // datetimepicker로 시간을 추가할 수 있게되면 수정
+	    
+	    $('.addEvent').show();
+	    $('.modifyEvent').hide();
+	    $("#calendarModal").modal('show');	
+	    
+	    $('#save-event').unbind();
+		$('#save-event').on('click', function () {
+			var addTitle = $('#edit-title').val()
+			var addStart = $('#edit-start').val()
+			var addEnd = $('#edit-end').val()
+			var allDay=$('#edit-allDay').val()
+			calendar.addEvent({
+	            title: addTitle,
+	            start: addStart,
+	            end: addEnd,
+	            allDay: allDay
+	          });
+			$('#edit-allDay').prop('checked', false);
+			$("#calendarModal").modal('hide');
+		});
+		
+		$("#edit-start, #edit-end").datepicker({
+			format: "yyyy-mm-dd",
+			language: "ko",
+			autoclose: true
+		})
+		.on("change", function () {
+	    	var fromdate = $(this).val();
+	    });
+	}
+
+	/*
+	 * editEvent
+	 */
+	var editEvent = function(info) {
+		var start = moment(info.event.startStr).format('YYYY-MM-DD');
+		var end = moment(info.event.endStr).format('YYYY-MM-DD');
+		
+		$('.modal-title').html('일정 수정');
+	    $('#edit-title').val(info.event.title);
+	    $('#edit-start').val(start);
+	    $('#edit-end').val(end);
+	    $('#edit-desc').val('');
+	    $('#edit-allDay').prop('checked', true); // datetimepicker로 시간을 추가할 수 있게되면 수정
+	    
+	    $('.addEvent').hide();
+	    $('.modifyEvent').show();
+	    $("#calendarModal").modal('show');
+	    
+	    $('#updateEvent').unbind();
+		$('#updateEvent').on('click', function () {
+			info.event.remove();
+			var modifyTitle = $('#edit-title').val()
+			var modifyStart = $('#edit-start').val()
+			var modifyEnd = $('#edit-end').val()
+			calendar.addEvent({
+	            title: modifyTitle,
+	            start: modifyStart,
+	            end: modifyEnd,
+	            allDay: true
+	          });
+			
+			$("#calendarModal").modal('hide');
+		});
+		$('#deleteEvent').unbind();
+		$('#deleteEvent').on('click', function () {
+			info.event.remove();
+			$('#edit-allDay').prop('checked', false);
+		    $("#calendarModal").modal('hide');
+		});
+		
+		$("#edit-start, #edit-end").datepicker({
+			format: "yyyy-mm-dd",
+			language: "ko",
+			autoclose: true
+		})
+		.on("change", function () {
+	    	var fromdate = $(this).val();
+	    });
+	}
+	
+	function addPlaceEvent() {
+	   var writer = prompt('id를 입력하세요.');
+	   var title = prompt('타이틀을 입력하세요');
+	   var start = prompt('YYYY-MM-DD 맞춰서 날짜를 입력하세요.');
+	    var end = prompt('YYYY-MM-DD 맞춰서 날짜를 입력하세요.');
+	    var description = prompt('설명을 적어주세요.');
+	      events.push({
+	         writer : writer,
+	         title : title,
+	         start : start,
+	         end : end,
+	         description : description,
+	         allDay : true
+	      }); //push end
+	    $.ajax({
+	    	url: "/tour/planner/insert.do",
+            type: "get",
+            data:{"writer" : writer,
+          		"title" : title,
+          		"start" : start_date,
+          		"end" : end_date,
+          		"description" : description,
+          		"allDay" : allDay
+            },  // 컨트롤러로 가서 insert sql 명령어 안에 들어갈 값.
+	        success: function(data) {
+	            if(data!=null){
+	                console.log(events);
+	            }//if end                           
+	            successCallback(events);
+	            alter('일정이 추가되었습니다.')
+	        }//success: function end                          
+	    }); //ajax end
+	} // addPlaceEvent() function end  
+	
+
+	</script>
 </html>

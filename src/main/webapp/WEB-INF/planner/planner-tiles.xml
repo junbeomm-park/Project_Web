@@ -6,13 +6,5 @@
 	<!-- contact 관련 작업으로 response될 페이지를 등록하는 설정파일 -->
 	<definition name="planner" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/planner/planner.jsp"/>
-			
 	</definition>
-	<definition name="createplan" extends="mainTemplate">
-		<put-attribute name="content" value="/WEB-INF/planner/createplan.jsp"/>
-	</definition>
-	
-	
-	
-	
 </tiles-definitions> 

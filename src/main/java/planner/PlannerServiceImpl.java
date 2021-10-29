@@ -23,13 +23,15 @@ public class PlannerServiceImpl implements PlannerService{
 	}
 
 	@Override
-	public int removeEvent(PlannerVO planner) {
-		return 0;
+	public int removeEvent(int id) {
+		int result = dao.removeEvent(id);
+		return result;
 	}
 
 	@Override
 	public int editEvent(PlannerVO planner) {
-		return 0;
+		int result = dao.editEvent(planner);
+		return result;
 	}
 	
 }

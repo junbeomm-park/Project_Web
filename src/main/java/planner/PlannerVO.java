@@ -24,6 +24,15 @@ public class PlannerVO {
 		this.allDay = allDay;
 	}
 
+	public PlannerVO(int id, String title, String start_date, String end_date, String description) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.start_date = start_date;
+		this.end_date = end_date;
+		this.description = description;
+	}
+
 	@Override
 	public String toString() {
 		return "PlannerVO [writer=" + writer + ", id=" + id + ", title=" + title + ", start_date=" + start_date

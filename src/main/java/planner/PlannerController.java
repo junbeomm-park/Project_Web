@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,6 +31,18 @@ public class PlannerController {
    @RequestMapping("/planner/insert.do")
    public String addEvent(PlannerVO planner) {
 	  service2.addEvent(planner);
+	  return "redirect:/planner.do";
+   }
+   
+   @RequestMapping("/planner/delete.do")
+   public String removeEvnet(int id){
+	  service2.removeEvent(id);
+	  return "redirect:/planner.do";
+   }
+   
+   @RequestMapping("/planner/update.do")
+   public String editEvent(@ModelAttribute PlannerVO planner){
+	  service2.editEvent(planner);
 	  return "redirect:/planner.do";
    }
    

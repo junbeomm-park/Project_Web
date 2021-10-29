@@ -1,3 +1,4 @@
+<%@page import="planner.PlannerVO"%>
 <%@page import="place.PlaceVO"%>
 <%@page import="course.CourseVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -139,11 +140,10 @@
 				margin-top: 5px;
 			}
 		</style>
-		
+
 	</head>
 	<body>
  <% 				ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
-	
 				int size = placelist.size();
 %>  
 		  	<div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/bg-Planner.jpg');">
@@ -238,7 +238,7 @@
 								</form>
 									<div class="modal-footer modifyEvent">
 	                        			<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-	                        			<button type="button" class="btn btn-danger" id="deleteEvent">삭제</button>
+	                        			<button type="button" class="btn btn-danger" id="deleteEvent" name="deleteEvent">삭제</button>
 	                        			<button type="button" class="btn btn-primary" id="updateEvent">저장</button>
                     				</div>
                     			</div>
@@ -293,6 +293,7 @@
 	 var events = [];
 	 var writer = $("#writer").val();
 	 document.addEventListener('DOMContentLoaded', function() {
+		
 	    var calendarEl = document.getElementById('calendar');
 
 	    calendar = new FullCalendar.Calendar(calendarEl, {
@@ -344,6 +345,7 @@
 	                           if(data!=null){
 	                                   $.each(data, function(index, element) {
 	                                         events.push({
+	                                        	 id: element.id,
 	                                        	 title: element.title,
 	         		            	             start : element.start_date,
 	         		        	        		 end : element.end_date,
@@ -426,12 +428,12 @@
 	var editEvent = function(info) {
 		var start = moment(info.event.startStr).format('YYYY-MM-DD');
 		var end = moment(info.event.endStr).format('YYYY-MM-DD');
-		
+		var id = info.event.id;
 		$('.modal-title').html('일정 수정');
 	    $('#edit-title').val(info.event.title);
-	    $('#edit-start').val(start);
-	    $('#edit-end').val(end);
-	    $('#edit-desc').val('');
+	    $('#edit-start').val(info.event.startStr);
+	    $('#edit-end').val(info.event.endStr);
+	    $('#edit-desc').val(info.event.extendedProps.deacription);
 	    $('#edit-allDay').prop('checked', true); // datetimepicker로 시간을 추가할 수 있게되면 수정
 	    
 	    $('.addEvent').hide();
@@ -440,17 +442,6 @@
 	    
 	    $('#updateEvent').unbind();
 		$('#updateEvent').on('click', function () {
-			info.event.remove();
-			var modifyTitle = $('#edit-title').val()
-			var modifyStart = $('#edit-start').val()
-			var modifyEnd = $('#edit-end').val()
-			calendar.addEvent({
-	            title: modifyTitle,
-	            start: modifyStart,
-	            end: modifyEnd,
-	            allDay: true
-	          });
-			
 			$("#calendarModal").modal('hide');
 		});
 		$('#deleteEvent').unbind();
@@ -458,6 +449,7 @@
 			info.event.remove();
 			$('#edit-allDay').prop('checked', false);
 		    $("#calendarModal").modal('hide');
+		    location.href="/tour/planner/delete.do?id="+encodeURI(id)
 		});
 		
 		$("#edit-start, #edit-end").datepicker({
@@ -468,9 +460,10 @@
 		.on("change", function () {
 	    	var fromdate = $(this).val();
 	    });
+
 	}
 	
-	function addPlaceEvent() {
+	function addPlaceEvent(info, successCallback) {
 	   var writer = prompt('id를 입력하세요.');
 	   var title = prompt('타이틀을 입력하세요');
 	   var start = prompt('YYYY-MM-DD 맞춰서 날짜를 입력하세요.');

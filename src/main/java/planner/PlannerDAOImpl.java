@@ -22,13 +22,13 @@ public class PlannerDAOImpl implements PlannerDAO {
 	}
 
 	@Override
-	public int removeEvent(PlannerVO planner) {
-		return sqlSession.insert("tour.planner.delete", planner);
+	public int removeEvent(int id) {
+		return sqlSession.delete("tour.planner.delete", id);
 	}
 
 	@Override
 	public int editEvent(PlannerVO planner) {
-		return sqlSession.insert("tour.planner.update", planner);
+		return sqlSession.selectOne("tour.planner.update", planner);
 	}
 	
 	

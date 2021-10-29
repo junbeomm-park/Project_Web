@@ -9,4 +9,10 @@
   	<select id="list" resultType="planner" parameterType="String">
   		select * from planner where writer=#{writer}
   	</select>
+  	<delete id="delete" parameterType="planner">
+  		delete from planner where id=#{id}
+  	</delete>
+  	<update id="update" parameterType="planner">
+  		update planner set title=#{title}, start_date=#{start_date}, end_date=#{end_date}, description=#{description} where id=#{id}
+  	</update>
   </mapper>

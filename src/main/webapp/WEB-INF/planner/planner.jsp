@@ -446,11 +446,16 @@
 	
 			$('#save-event').unbind();
 			$('#save-event').on('click', function() {
+				var title = $('#addEvent-edit-title').val();
+				
 				if (start > end) {
 		            alert('끝나는 날짜가 앞설 수 없습니다.');
 		            return false;
 		        }
-		        
+				if (title === '') {
+		            alert('일정명은 필수입니다.');
+		            return false;
+		        }
 				$('#addEvent-edit-allDay').prop('checked', false);
 				$("#calendarModal").modal('hide');
 			}); // save-event button 
@@ -492,13 +497,18 @@
 		            alert('끝나는 날짜가 앞설 수 없습니다.');
 		            return false;
 		        }
+				if (title === '') {
+		            alert('일정명은 필수입니다.');
+		            return false;
+		        }
+				// update
 				$("#calendarModal").modal('hide');
 			}); // updateEvent button 
 			$('#deleteEvent').unbind();
 			$('#deleteEvent').on('click', function() {
+				location.href = "/tour/planner/delete.do?id=" + encodeURI(id)
 				$('#editEvent-edit-allDay').prop('checked', false);
 				$("#calendarModal").modal('hide');
-				location.href = "/tour/planner/delete.do?id=" + encodeURI(id)
 			}); // deleteEvent button 
 			$("#editEvent-edit-start, #editEvent-edit-end").datepicker({
 				format : "yyyy-mm-dd",

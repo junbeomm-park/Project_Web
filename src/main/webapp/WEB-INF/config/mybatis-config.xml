@@ -8,11 +8,13 @@
 		<typeAlias type="place.PlaceVO" alias="place" />
 		<typeAlias type="review.ReviewVO" alias="review" />
 		<typeAlias type="course.CourseVO" alias="course" />
+		<typeAlias type="planner.PlannerVO" alias="planner"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/member.xml" />
 		<mapper resource="mapper/place.xml" />
 		<mapper resource="mapper/review.xml" />
 		<mapper resource="mapper/course.xml" />
+		<mapper resource="mapper/planner.xml"/>
 	</mappers>
 </configuration>

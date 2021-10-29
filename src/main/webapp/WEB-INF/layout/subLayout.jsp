@@ -10,6 +10,9 @@
 			.content{
 				margin-bottom: 80px;
 			}
+			form{
+				margin-top: 150px;;
+			}
 		</style>
 	</head>
 	<body>
@@ -18,7 +21,7 @@
 			<tiles:insertAttribute name="nav"></tiles:insertAttribute>
 		</div>
 		<form action="/tour/place/tourdetail.do">
-	    <div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/background-05.jpg');">
+<!-- 	   <div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/background-05.jpg');">
 	      <div class="overlay"></div>
 	      <div class="container">
 	        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -28,7 +31,7 @@
 	          </div>
 	        </div>
 	      </div>
-	    </div>
+	    </div>  -->
 		<div class="container">
 			<div class="content">
 				<!-- 이곳에 content화면을 연결하세요" -->

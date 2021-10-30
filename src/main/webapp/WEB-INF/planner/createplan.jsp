@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
 		<!-- fuallcalender theme system -->
 		<link href='https://use.fontawesome.com/releases/v5.0.6/css/all.css' rel='stylesheet'>
+		<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<style type="text/css">
 			html, body {
 				margin: 0;
@@ -128,14 +130,26 @@
 				background-color:#f8faff;
 				margin-top: 5px;
 			}
+			.btnimg{
+				position: absolute; 
+				right: 0px; 
+				bottom: 0px;
+				width: 30px;
+				height: 30px;
+				border:none;
+				outline: none;
+				border-radius: 20px;
+				cursor: pointer;
+			}
 		</style>
+
 	</head>
 	<body>
  <% 				ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
 	
 				int size = placelist.size();
 %>  
-		  	<div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/bg-Planner.jpg');">
+	<!-- 	  	<div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/bg-Planner.jpg');">
 		    	<div class="overlay"></div>
 		      	<div class="container">
 		        	<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -145,7 +159,7 @@
 		          		</div>
 	        		</div>
 		      	</div>
-		    </div>
+		    </div> -->
 		  	<!-- START Content -->
 		  	<div class="container-fluid text-center bg-light" >
 		  		<div class="row content">
@@ -240,16 +254,19 @@
 												for(int i = 0; i < placelist.size() ; i++) { 
 												PlaceVO place = placelist.get(i);
 									%>
-										<div class="placebox">
+										<div class="placebox" >
 											<div class="placerow">
 											<div class="row">
 												<div class="col-md-3" style=" margin-right:10px;">
 													<img class="placeimg" src="/tour/images/<%= place.getImage()%>"/>
 												</div>
+												
+												
 												<div class="col-md-8">
 													<div class="placename"><%= place.getSpotname() %></div>
-													<div class="areaname">&nbsp;&nbsp;<%=place.getAddr() %></div>
-													<button class="placebtn" type="submit"><img class="placebtn" alt="" src="/tour/images/plusbtn.PNG"></button>
+													<div class="placeaddr" id="addr">&nbsp;&nbsp;<%=place.getAddr() %></div>
+													<button class="placebtn" type="button" id="placebtn<%=i%>" onclick="test('placebtn<%=i%>')">
+													<img class="btnimg" alt="" src="/tour/images/plusbtn.PNG"></button>
 												</div>
 											</div>
 											</div>
@@ -264,43 +281,84 @@
 				</div>
 		  	</div>	<!-- END Content -->
 	</body>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d1fec8d8766a8a6cd6d1d7a100d376e0&libraries=services"></script>
+		<script type="text/javascript">
+		
+
+		
+		function test(name){
+			alert("=============="+name)
+			 addr = $("#"+name).closest("div").find(".placeaddr").text();
+			 alert(addr)
+			 setMap(addr)
+			 $.ajax({
+					url:"/tour/tour/getAddr",
+					type:"get",
+					data:{"addr":addr},
+					success:function(data){
+						
+						$("#test").empty();
+						$("#test").append(data)
+					}
+				})
+		}
+
 	
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d1fec8d8766a8a6cd6d1d7a100d376e0&libraries=services"></script>
-		<script>
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		
+	 		setMap()
+			function setMap(addr){
+				alert("map=>"+addr)
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    mapOption = { 
 			        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
 			        level: 4 // 지도의 확대 레벨
 			    };
 			
 			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-			// 주소-좌표 변환 객체를 생성합니다
-			var geocoder = new kakao.maps.services.Geocoder();
 			
+			// 주소-좌표 변환 객체를 생성합니다
+			for (var i = 0; i < addr.length; i++ ) {
+				
+				var geocoder = new kakao.maps.services.Geocoder();
+			
+			
+			
+	
 			
 			// 주소로 좌표를 검색합니다
-			geocoder.addressSearch('강원 강릉시 경포로 393', function(result, status) {
+			geocoder.addressSearch(addr, function(result, status) {
 
-			    // 정상적으로 검색이 완료됐으면 
-			     if (status === kakao.maps.services.Status.OK) {
+		    // 정상적으로 검색이 완료됐으면 
+		    if (status === kakao.maps.services.Status.OK) {
+		
+		    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-			        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+	        // 결과값으로 받은 위치를 마커로 표시합니다
+	        var marker = new kakao.maps.Marker({
+	            map: map,
+	            position: coords
+	        });
+	
+	        // 인포윈도우로 장소에 대한 설명을 표시합니다
+	        var infowindow = new kakao.maps.InfoWindow({
+	            content: '<div style="width:150px;text-align:center;padding:6px 0;">addr</div>'
+	        });
+	        infowindow.open(map, marker);
+		    
+	        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+	        map.setCenter(coords);
+	   		 } 
+			});      
+		}
+		}
+		
 
-			        // 결과값으로 받은 위치를 마커로 표시합니다
-			        var marker = new kakao.maps.Marker({
-			            map: map,
-			            position: coords
-			        });
-
-			        // 인포윈도우로 장소에 대한 설명을 표시합니다
-			        var infowindow = new kakao.maps.InfoWindow({
-			            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-			        });
-			        infowindow.open(map, marker);
-
-			        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-			        map.setCenter(coords);
-			    } 
-			});    
+			
 		</script>
+<!-- 		<script type="text/javascript">
+		function placeSelect() {
+			alert("선택됨");
+			
+	          });
+		</script> -->
 </html>

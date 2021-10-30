@@ -73,4 +73,15 @@ public class PlannerController {
 		System.out.println(planlist);
 		return planlist;
 	}
+	  @RequestMapping("/createplan.do") 
+	   public ModelAndView createPlanView() { 
+	      ModelAndView mav =  new ModelAndView("createplan"); 
+	      List<PlaceVO> placelist = service.placeList(); //dao에서 결과가 넘어오는 경우 디버깅 작업은 넘어오는 데이터를
+	    // sysout으로 컨트롤러 단까지 모두 출력
+	     mav.addObject("placelist", placelist);
+	     
+	     return mav;
+	   }
+	  
+	
 }

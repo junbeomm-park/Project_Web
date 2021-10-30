@@ -7,7 +7,50 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+			.title{
+			font-size: 40pt;
+			color:#4181cf;
+			font-weight: bold;
+			magrin: 20px;
+		}
+		.detail{
+		 	font-size: 15pt;
+		 	color: #6b6b6b;
+		 	font-weight: bold;
+		 	margin-bottom: 70px;
+		 	
+		}
+		.check{
+			width: 30px;
+			height: 30px;
+			margin-right: 20px;
+		}
+		.list {
+			font-size: 13pt;
+			font-weight: bold;
+		}
+		.infoimg{
+			width: 200px;
+			height: 200px;
+			margin-left: 40px;
+			margin-right: 40px;
+		}
+		.listhead{
+			font-size: 20pt;
+			font-weight: bold;
+			margin-bottom: 30px;
+			padding-bottom : 10px;
+			border-bottom: 1px solid #b1b1b1;
+		}
+		.box{
+			margin: 80px;
+			margin-bottom: 100px;
+		}
+	</style>
+	
 </head>
+
 <body>
 	<form action="/tour/about/about.do">
 		<div class="hero-wrap js-fullheight"
@@ -33,213 +76,54 @@
 
 		<section class="ftco-section">
 			<div class="container">
-				<div class="row d-md-flex">
-					<div class="col-md-6 ftco-animate img about-image"
-						style="background-image: url(images/about.jpg);"></div>
-					<div class="col-md-6 ftco-animate p-md-5">
-						<div class="row">
-							<div class="col-md-12 nav-link-wrap mb-5">
-								<div class="nav ftco-animate nav-pills" id="v-pills-tab"
-									role="tablist" aria-orientation="vertical">
-									<a class="nav-link active" id="v-pills-whatwedo-tab"
-										data-toggle="pill" href="#v-pills-whatwedo" role="tab"
-										aria-controls="v-pills-whatwedo" aria-selected="true">tour
-										place?</a> <a class="nav-link" id="v-pills-mission-tab"
-										data-toggle="pill" href="#v-pills-mission" role="tab"
-										aria-controls="v-pills-mission" aria-selected="false">Our
-										mission</a> <a class="nav-link" id="v-pills-goal-tab"
-										data-toggle="pill" href="#v-pills-goal" role="tab"
-										aria-controls="v-pills-goal" aria-selected="false">Our
-										goal</a>
-								</div>
-							</div>
-							<div class="col-md-12 d-flex align-items-center">
-
-								<div class="tab-content ftco-animate" id="v-pills-tabContent">
-
-									<div class="tab-pane fade show active" id="v-pills-whatwedo"
-										role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
-										<div>
-											<h2 class="mb-4">저희 tour place는</h2>
-											<p>시도별 추천 관광코스를 제공하며, 관광코스별 관광지 상세 날씨 조회, 상세정보 등을 제공하는
-												서비스 입니다.</p>
-											<p></p>
-										</div>
-									</div>
-
-									<div class="tab-pane fade" id="v-pills-mission" role="tabpanel"
-										aria-labelledby="v-pills-mission-tab">
-										<div>
-											<h2 class="mb-4">Exceptional Web Solutions</h2>
-											<p>시도별 관광지 조회</p>
-											<p>관광코스 추천</p>
-											<p>관광지별 상세 날씨 조회</p>
-											<p>여행 플래너 제공</p>
-											<p>Review 작성</p>
-
-										</div>
-									</div>
-
-									<div class="tab-pane fade" id="v-pills-goal" role="tabpanel"
-										aria-labelledby="v-pills-goal-tab">
-										<div>
-											<h2 class="mb-4">Help Our Customer</h2>
-											<p>고객님이 소중한 추억을 만들 수 있도록 저희 tour place가 함께 하겠습니다.</p>
-											<p></p>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div class="title">
+							Tour Place	
 						</div>
-					</div>
-				</div>
+						<div class="detail">
+							저희 Tour place는 국내의 다양한 관광지를 소개합니다.<br/>
+							관광지의 상세정보뿐만 아니라 관광지별 추천 코스를 제공하며 개인 일정을 계획할 수 있는 플래너 서비스도 제공하고 있습니다.<br/>
+							고객님이 소중한 추억을 위해 저희 'Tour Place'가 함께 하겠습니다.
+						</div>	
+								<div class="box">
+ 									<div class="row">
+											<div class="col-md-4">
+												<img class="infoimg" alt="" src="/tour/images/placemap.png">
+											</div>
+											<div class="col-md-8">
+												<h2 class="listhead"> 관광지 정보</h2>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지 이미지</p>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지 위치 및 지도</p>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지별 상세 정보</p>
+											</div>
+										</div>
+									</div>
+									<div class="box">
+										<div class="row">
+											<div class="col-md-8">
+												<h2 class="listhead"> 추천 코스</h2>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지 지역별 추천코스</p>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지별 회원 별점 및 review</p>
+											</div>
+											<div class="col-md-4">
+												<img class="infoimg" alt="" src="/tour/images/coursemap.png">
+											</div>
+										</div>
+									</div>
+									<div class="box">
+										<div class="row">
+											<div class="col-md-4">
+												<img class="infoimg" alt="" src="/tour/images/calendar.png">
+											</div>
+											<div class="col-md-8">
+												<h2 class="listhead"> 여행 Planner</h2>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">개인별 여행 계획</p>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">월별, 주별, 일별 planner 기능</p>
+												<p class="list"><img class="check" src="/tour/images/check.jpg">관광지 추가 기능</p>
+											</div>
+										</div>
+									</div>
 			</div>
-		</section>
 
-		<section class="ftco-section bg-light">
-			<div class="container">
-				<div class="row justify-content-start mb-5 pb-3">
-					<div class="col-md-7 heading-section ftco-animate">
-						<span class="subheading">FAQS</span>
-						<h2 class="mb-4">
-							<strong>Frequently</strong> Ask Question
-						</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 ftco-animate">
-						<div id="accordion">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menuone"
-												aria-expanded="true" aria-controls="menuone">When she
-												reached the first hills? <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menuone" class="collapse show">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menutwo"
-												aria-expanded="false" aria-controls="menutwo">Italic
-												Mountains, she had a last <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menutwo" class="collapse">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menu3"
-												aria-expanded="false" aria-controls="menu3">
-												Bookmarksgrove, the headline? <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menu3" class="collapse">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menu4"
-												aria-expanded="false" aria-controls="menu4">Alphabet
-												Village and the subline of her own? <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menu4" class="collapse">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menu5"
-												aria-expanded="false" aria-controls="menu5">Then she
-												continued her way? <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menu5" class="collapse">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-									<div class="card">
-										<div class="card-header">
-											<a class="card-link" data-toggle="collapse" href="#menu6"
-												aria-expanded="false" aria-controls="menu6">Skyline of
-												her hometown Bookmarksgrove? <span class="collapsed"><i
-													class="icon-plus-circle"></i></span><span class="expanded"><i
-													class="icon-minus-circle"></i></span>
-											</a>
-										</div>
-										<div id="menu6" class="collapse">
-											<div class="card-body">
-												<p>When she reached the first hills of the Italic
-													Mountains, she had a last view back on the skyline of her
-													hometown Bookmarksgrove, the headline of Alphabet Village
-													and the subline of her own road, the Line Lane. Pityful a
-													rethoric question ran over her cheek, then she continued
-													her way.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 	</form>
 </body>
 </html>

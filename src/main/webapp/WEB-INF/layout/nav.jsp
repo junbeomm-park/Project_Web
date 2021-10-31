@@ -71,7 +71,6 @@
 	          <li class="nav-item active"><a href="/tour/index.do" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="/tour/about.do" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="/tour/place/tour.do?category=all" class="nav-link">Tour</a></li>
-	          <li class="nav-item"><a href="/tour/contact.do" class="nav-link">Contact</a></li>
 	          <li class="nav-item"><a href="/tour/planner.do" class="nav-link">Planner</a></li>
 	        <%if(user==null){ %>
 	          <li class="nav-item cta"><a href="/tour/login.do" class="nav-link"><span>Login</span></a></li>

@@ -15,26 +15,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Explore <br></strong> your amazing city</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
-            <div class="block-17 my-4">
-              <form action="/tour/index.do" method="post" class="d-block d-flex">
-                <div class="fields d-block d-flex">
-                  <div class="textfield-search one-third">
-                  	<input type="text" class="form-control" placeholder="Ex: food, service, hotel">
-                  </div>
-                  <div class="select-wrap one-third">
-                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                    <select name="" id="" class="form-control" placeholder="Keyword search">
-                      <option value="">Where</option>
-                      <option value="">San Francisco USA</option>
-                      <option value="">Berlin Germany</option>
-                      <option value="">Lodon United Kingdom</option>
-                      <option value="">Paris Italy</option>
-                    </select>
-                  </div>
-                </div>
-                <input type="submit" class="search-submit btn btn-primary" value="Search">  
-              </form>
+    
             </div>
         
           </div>
@@ -45,7 +26,7 @@
 			<div class="container my-4">
 		<div class="row">
 					<div class="col-12 col-sm-8 col-lg-9 mb-4 mb-sm-0">
-						<div class="h5 bolder">지역별 검색</div>
+						<h2 class="mb-4"><strong>지역별</strong> 검색</h2><hr>
 						<div class="area-block">
 							<div class="container">
 								<div class="row">
@@ -150,8 +131,8 @@
     	<div class="container">
     		<div class="row justify-content-start mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate">
-          	<span class="subheading">Featured</span>
-            <h2 class="mb-4"><strong>Featured</strong> Destination</h2>
+          	
+            <h2 class="mb-4"><strong>인기</strong> 관광지</h2><hr>
           </div>
         </div>
 
@@ -248,8 +229,8 @@
     	<div class="container">
 				<div class="row justify-content-start mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate">
-          	<span class="subheading">Special Offers</span>
-            <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+          	
+            <h2 class="mb-4"><strong>오늘의 추천코스</strong>&nbsp;&nbsp;&nbsp;&nbsp;"서울도심 - 예술이 빛나다"</h2><hr>
           </div>
         </div>    		
     	</div>
@@ -289,7 +270,7 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
+    					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=4001&state=READ" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul01.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -297,7 +278,7 @@
     					<div class="text p-3">
     						<div class="d-flex">
     							<div class="one">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(서울)덕수궁미술관</a></h3>
 		    						<p class="rate">
 		    							<i class="icon-star"></i>
 		    							<i class="icon-star"></i>
@@ -309,11 +290,11 @@
 	    						</div>
 	    						
     						</div>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p>국가적 차원에서 현대 미술작품의 수집·보존·전시와 이와 연관된 조사·연구를 하며 국제교류 및 미술활동의 보급을 위해서 설립된 국가를 대표하는 국립 미술관이다. 서울시 종로구 소격동 삼청로의 서울관과 덕수궁 내에 덕수궁관이라는 분관이 위치해 있다.</p>
     						<p class="days"><span>2 days 3 nights</span></p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span><i class="icon-map-o"></i> 서울특별시 중구 정동 세종대로 99</span> 
     							<span class="ml-auto"><a href="#">Discover</a></span>
     						</p>
     					</div>
@@ -321,7 +302,7 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-3.jpg);">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul01.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -424,44 +405,37 @@
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
             <h2 class="mb-4">Some fun facts</h2>
-            <span class="subheading">More than 100,000 websites hosted</span>
+            
           </div>
         </div>
     		<div class="row justify-content-center">
     			<div class="col-md-10">
 		    		<div class="row">
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		                <strong class="number" data-number="100000">0</strong>
-		                <span>Happy Customers</span>
+		                <strong class="number" data-number="1237">0</strong>
+		                <span>Visitors</span>
 		              </div>
 		            </div>
 		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		                <strong class="number" data-number="40000">0</strong>
+		                <strong class="number" data-number="77">0</strong>
 		                <span>Destination Places</span>
 		              </div>
 		            </div>
 		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18 text-center">
 		              <div class="text">
-		                <strong class="number" data-number="87000">0</strong>
-		                <span>Hotels</span>
+		                <strong class="number" data-number="14">0</strong>
+		                <span>Course</span>
 		              </div>
 		            </div>
 		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="56400">0</strong>
-		                <span>Restaurant</span>
-		              </div>
-		            </div>
-		          </div>
+		    
 		        </div>
 	        </div>
         </div>
@@ -474,16 +448,17 @@
       <div class="container">
         <div class="row justify-content-start">
           <div class="col-md-5 heading-section ftco-animate">
-          	<span class="subheading">Best Directory Website</span>
-            <h2 class="mb-4 pb-3"><strong>Why</strong> Choose Us?</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-            <p><a href="#" class="btn btn-primary btn-outline-primary mt-4 px-4 py-3">Read more</a></p>
+          	
+            <h2 class="mb-4 pb-3"><strong>What</strong> Tour Place?</h2>
+            <p>저희 Tour place는 국내의 다양한 관광지를 소개합니다.</p>
+            <p>관광지의 상세정보뿐만 아니라 관광지별 추천 코스를 제공하며 개인 일정을 계획할 수 있는 플래너 서비스도 제공하고 있습니다.</p>
+            <p>고객님이 소중한 추억을 위해 저희 'Tour Place'가 함께 하겠습니다.</p>
+            <p><a href="/tour/about.do" class="btn btn-primary btn-outline-primary mt-4 px-4 py-3">Read more</a></p>
           </div>
 					<div class="col-md-1"></div>
           <div class="col-md-6 heading-section ftco-animate">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4 pb-3"><strong>Our</strong> Guests Says</h2>
+          	
+            <h2 class="mb-4 pb-3"><strong>Our</strong> Developer Says</h2>
           	<div class="row ftco-animate">
 		          <div class="col-md-12">
 		            <div class="carousel-testimony owl-carousel">
@@ -497,7 +472,7 @@
 		                  <div class="text ml-md-4">
 		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 		                    <p class="name">Dennis Green</p>
-		                    <span class="position">Guest from italy</span>
+		                    
 		                  </div>
 		                </div>
 		              </div>
@@ -511,13 +486,13 @@
 		                  <div class="text ml-md-4">
 		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 		                    <p class="name">Dennis Green</p>
-		                    <span class="position">Guest from London</span>
+		                    
 		                  </div>
 		                </div>
 		              </div>
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(images/mihee.png)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
@@ -525,7 +500,21 @@
 		                  <div class="text ml-md-4">
 		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 		                    <p class="name">Dennis Green</p>
-		                    <span class="position">Guest from Philippines</span>
+		                    
+		                  </div>
+		                </div>
+		              </div>
+		               <div class="item">
+		                <div class="testimony-wrap d-flex">
+		                  <div class="user-img mb-5" style="background-image: url(images/sarang.jpg)">
+		                    <span class="quote d-flex align-items-center justify-content-center">
+		                      <i class="icon-quote-left"></i>
+		                    </span>
+		                  </div>
+		                  <div class="text ml-md-4">
+		                    <p class="mb-5">일단, 지금까지 써왔던 웹사이트들을 다시 보게 되는 계기가 되었다. 그리고 처음 해보는 것이 너무 많았기에, 개인적으로는 '더 잘할 수 있었을 것 같은데'라는 생각이 들어서 조금 아쉬웠다. 하지만, 생에 첫 프로젝트를 정말 운이 좋게도 좋은 팀원들과 선생님을 만나, 무사히 끝마칠 수 있었다는 것에 감사한다.</p>
+		                    <p class="name">Sarang Kim</p>
+		                    
 		                  </div>
 		                </div>
 		              </div>
@@ -544,7 +533,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
               <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+              
               <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-8">
                   <form action="#" class="subscribe-form">
@@ -563,28 +552,7 @@
 
 
 
-		<section class="ftco-section-parallax">
-	      <div class="parallax-img d-flex align-items-center">
-	        <div class="container">
-	          <div class="row d-flex justify-content-center">
-	            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-	              <h2>Subcribe to our Newsletter</h2>
-	              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-	              <div class="row d-flex justify-content-center mt-5">
-	                <div class="col-md-8">
-	                  <form action="#" class="subscribe-form">
-	                    <div class="form-group d-flex">
-	                      <input type="text" class="form-control" placeholder="Enter email address">
-	                      <input type="submit" value="Subscribe" class="submit px-3">
-	                    </div>
-	                  </form>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </section>
+
 	    <!-- map 불러오기 -->
 	 <script>
 			$(document).ready(sigunguChange);

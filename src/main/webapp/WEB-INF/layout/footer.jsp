@@ -12,7 +12,7 @@
 	          <div class="col-md">
 	            <div class="ftco-footer-widget mb-4">
 	              <h2 class="ftco-heading-2">tour place</h2>
-	              <p> 시군구별 관광지 기후 지수<br/> 기상지수예보<br/> (식중독지수, 체감온도,자외선지수)<br/>동네예보 (기온,습도)<br/>여행 플래너 </p>
+	              <p>관광지 조회 <br/>시도별 관광지 조회 <br/> 추천 관광지 코스 <br/>여행 플래너 </p>
 	              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
 	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -24,11 +24,9 @@
 	            <div class="ftco-footer-widget mb-4 ml-md-5">
 	              <h2 class="ftco-heading-2">Information</h2>
 	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">About</a></li>
-	                <li><a href="#" class="py-2 d-block">Tour</a></li>
-	                <li><a href="#" class="py-2 d-block">Review</a></li>
-	                <li><a href="#" class="py-2 d-block">Contact</a></li>
-	                <li><a href="#" class="py-2 d-block">Planner</a></li>
+	                <li><a href="/tour/about.do" class="py-2 d-block">About</a></li>
+	                <li><a href="/tour/place/tour.do?category=all" class="py-2 d-block">Tour</a></li>
+	                <li><a href="/tour/planner.do" class="py-2 d-block">Planner</a></li>
 	                
 	              </ul>
 	            </div>

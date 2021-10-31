@@ -236,38 +236,7 @@
     	</div>
     	<div class="container-fluid">
     		<div class="row">
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
-    				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
-    						<div class="icon d-flex justify-content-center align-items-center">
-    							<span class="icon-search2"></span>
-    						</div>
-    					</a>
-    					<div class="text p-3">
-    						<div class="d-flex">
-    							<div class="one">
-		    						<h3><a href="#">Paris, Italy</a></h3>
-		    						<p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p>
-	    						</div>
-	    						
-    						</div>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
-    						<p class="days"><span>2 days 3 nights</span></p>
-    						<hr>
-    						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
-    							<span class="ml-auto"><a href="#">Discover</a></span>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
+ 
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
     					<a href="http://localhost:8088/tour/place/tourdetail.do?spotareaid=4001&state=READ" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul01.jpg);">
@@ -300,9 +269,9 @@
     					</div>
     				</div>
     			</div>
-    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    			   			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul01.jpg);">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul02.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -310,7 +279,7 @@
     					<div class="text p-3">
     						<div class="d-flex">
     							<div class="one">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(서울)새문길 박물관거리</a></h3>
 		    						<p class="rate">
 		    							<i class="icon-star"></i>
 		    							<i class="icon-star"></i>
@@ -322,11 +291,11 @@
 	    						</div>
 	    						
     						</div>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p>새문길 내에 서울역사박물관 등 7개 박물관과 6개의 문화기관이 있는 거리다.</p>
     						<p class="days"><span>2 days 3 nights</span></p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span><i class="icon-map-o"></i>서울특별시 종로구 사직동 새문안로 55</span> 
     							<span class="ml-auto"><a href="#">Discover</a></span>
     						</p>
     					</div>
@@ -334,7 +303,7 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-4.jpg);">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul03.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -342,7 +311,39 @@
     					<div class="text p-3">
     						<div class="d-flex">
     							<div class="one">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(서울)새문길 박물관거리</a></h3>
+		    						<p class="rate">
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star"></i>
+		    							<i class="icon-star-o"></i>
+		    							<span>8 Rating</span>
+		    						</p>
+	    						</div>
+	    						
+    						</div>
+    						<p>서울시립미술관(SeMA·세마)은 사용자, 매개자, 생산자 모두가 함께하는 공동의 기억을 짓고, 뜻깊은 사회문화적 가치를 일구는 미래를 상상합니다. 서울 전역에 펼쳐진 각 분관들이 시대와 미술의 변화에 조응해 교차하고, 서로를 채우고, 매일 성장하는 "서울형 네트워크 미술관"입니다</p>
+    						<p class="days"><span>2 days 3 nights</span></p>
+    						<hr>
+    						<p class="bottom-area d-flex">
+    							<span><i class="icon-map-o"></i> 서울특별시 중구 서소문동 덕수궁길 61</span> 
+    							<span class="ml-auto"><a href="#">Discover</a></span>
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul04.jpg);">
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-search2"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							<div class="one">
+		    						<h3><a href="#">(서울)정동길</a></h3>
 		    						<p class="rate">
 		    							<i class="icon-star"></i>
 		    							<i class="icon-star"></i>
@@ -354,11 +355,11 @@
 	    						</div>
 	    					
     						</div>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p>너비 18m의 1차선 일방통행도로이다. 서울 시내에서 가장 아름다운 가로로, 유명한 산책길 중의 하나이다. 정동교회 앞 사거리에서 이화여자고등학교 동문 앞을 지나 새문안길에 이르는 구간이다.</p>
     						<p class="days"><span>2 days 3 nights</span></p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span><i class="icon-map-o"></i> 서울특별시 중구 정동 14-2</span> 
     							<span class="ml-auto"><a href="#">Discover</a></span>
     						</p>
     					</div>
@@ -366,7 +367,7 @@
     			</div>
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-5.jpg);">
+    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/seoul05.jpg);">
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -374,7 +375,7 @@
     					<div class="text p-3">
     						<div class="d-flex">
     							<div class="one">
-		    						<h3><a href="#">Paris, Italy</a></h3>
+		    						<h3><a href="#">(서울)홍난파 가옥</a></h3>
 		    						<p class="rate">
 		    							<i class="icon-star"></i>
 		    							<i class="icon-star"></i>
@@ -386,11 +387,11 @@
 	    						</div>
 	    						
     						</div>
-    						<p>Far far away, behind the word mountains, far from the countries</p>
+    						<p>1930년에 독일 선교사가 지은 붉은색 벽돌 벽체에 기와를 얹은 서양식 건물로, 《봉선화》《고향의 봄》 등으로 유명한 작곡가 홍난파(1898~1941)가 6년간 말년을 보낸 집이다.</p>
     						<p class="days"><span>2 days 3 nights</span></p>
     						<hr>
     						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
+    							<span><i class="icon-map-o"></i> 서울특별시 종로구 홍파동 2-16</span> 
     							<span class="ml-auto"><a href="#">Discover</a></span>
     						</p>
     					</div>
@@ -464,28 +465,38 @@
 		            <div class="carousel-testimony owl-carousel">
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(images/dasol.png)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
 		                  </div>
 		                  <div class="text ml-md-4">
-		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-		                    <p class="name">Dennis Green</p>
+		                    <p class="mb-5">자바를 배우고 첫 프로젝트로 시작했을때는 타 사이트 못지않게 구현하고 싶은 방법이 많았다.
+비번의 암호화나 ,특수문자 기호 하나는 포함 8~ 13자리까지만 가능하도록 하기 외에도
+다른 인증방법(전화인증, 주민번호 인증) 및 주소입력(시 군 구 선택후) 상세주소 입력까지 구현해보고 싶은 생각은 많이 했으나
+실질적으로 하다보니 실용성 위주와 정말 필요한 정보만 입력한것 말고는 많이 부족하다는것도 느끼면서 프로젝트를 마치게 되어 아쉬웠다.
+처음에는 쉽고 빠르게 나갈거라 생각했던 개인정보를 입력하는 회원가입 페이지만으로도 많은 코드들이 들어가고 분석하는대 시간이 걸리면서 늦어졌는대
+실제 사용되고 있는 사이트에서는 어떠한 구조를 갖고 있을지 전혀 예상이 가질 않았다. 생각한것만큼 많이 구현하지는 못했지만 그래도 해봤다는것에 만족하면서
+이번 프로젝트를 하면서 많은 고생을 한 팀장 준범님, 미희님, 사랑님 그리고 구조이해에 도움을 많이 주신 김서연 강사님까지 모든분들에게 감사드립니다.</p>
+		                    <p class="name">Dasol Lee</p>
 		                    
 		                  </div>
 		                </div>
 		              </div>
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(images/junbeom.png)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
 		                  </div>
 		                  <div class="text ml-md-4">
-		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-		                    <p class="name">Dennis Green</p>
+		                    <p class="mb-5">첫 프로젝트 팀이 짜여지고 어수선한 분위기에서 팀장을 맡게 되었을때 정말 많은 고민과 부담감이 있었다. '내가 잘 이끌수 있을까? 내가 제일 많이 부족하지 않을까? 지금이라도 팀장 못하겠다고 말을할까 ?' 라는 온갖 생각들이 스쳐갔었다. 그래서 프로젝트 초반 매우 소극적이었고 판단을 잘 못내렸다. 하지만 시간이 지날 수록 팀원들과 많은 얘기를 나누고 프로젝트외의 수업내용등을 서로 공유하면서 적극적으로 참여하게 됬으며, 심지어 욕심까지 났다. 더 나아가 우리 조원들에게 피해를 안주려고 수업한 내용을 복습, 될 때까지 복습, 선생님이 그날 내주신 과제를 무조건 소화 하려고 복습을 했다. 아직 많이 부족하지만 이러한 과정이 없었다면 프로젝트 진행에 어려움이 있었을 거라 생각한다. 완성 하지 못한 기능이 있지만 아쉽지만 프로젝트의 중요성을 깨닫게 되었다.
+							그리고 2달 여 동안 같이 고생한 우리 다솔님, 미희님, 사랑님 정말 너무 고생 많았고 끝까지 믿고 따라와줘서 좋은 추억을 남기게 되어 감사의 말씀을 드리고 싶다. 그리고 늦은 밤, 주말까지
+							질문을 받아주시고 친절히 답장을 해주신 
+							김서연 선생님, 말로 표현할 수 없는 감사의
+							말씀을 드립니다.</p>
+		                    <p class="name">Junbeom Park</p>
 		                    
 		                  </div>
 		                </div>
@@ -498,8 +509,8 @@
 		                    </span>
 		                  </div>
 		                  <div class="text ml-md-4">
-		                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-		                    <p class="name">Dennis Green</p>
+		                    <p class="mb-5">처음으로 프로그래밍 언어를 배우면서 스스로 이런 기능들을 다 구현할 수 있을까 걱정이 많았습니다. 프로젝트를 진행하면서도 이론적으로 배우는 것과 실제로 활용하여 기능을 구현하는 것은 굉장히 다르다는 것을 느꼈습니다. 팀원들과 협업하며 처음 방향성과는 달라진 부분도 있어 아쉽기도 하지만, 생각했던 기능들은 잘 구현해 낸 것 같아 뿌듯한 경험이었습니다. 이번 프로젝트로 한층 더 성장할 수 있었고 함께 한 팀원들과 도움 주신 강사님께 정말 감사합니다.</p>
+		                    <p class="name">Mihee Lee</p>
 		                    
 		                  </div>
 		                </div>

@@ -28,7 +28,7 @@ public class PlannerDAOImpl implements PlannerDAO {
 
 	@Override
 	public int editEvent(PlannerVO planner) {
-		return sqlSession.selectOne("tour.planner.update", planner);
+		return sqlSession.update("tour.planner.update", planner);
 	}
 	
 	

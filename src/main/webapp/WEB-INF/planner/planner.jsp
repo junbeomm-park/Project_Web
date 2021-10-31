@@ -259,6 +259,7 @@
 								<form action="/tour/planner/update.do">
 									<div class="modal-body editEvent">
 									<input type="hidden" name="writer" id="writer" value="${loginOkUser.mem_id}" />
+									<input type="hidden" name="id" id="id" />
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-12">
@@ -301,7 +302,7 @@
 									<div class="modal-footer editEvent">
 										<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 										<button type="button" class="btn btn-danger" id="deleteEvent" name="deleteEvent">삭제</button>
-										<button type="button" class="btn btn-primary" id="updateEvent">저장</button>
+										<button type="submit" class="btn btn-primary" id="updateEvent">저장</button>
 									</div> <!-- editEvent modal-footer end -->
 								</form> <!-- editEvent form end -->
 							</div> <!-- modal-content end -->
@@ -365,9 +366,17 @@
 				slotMaxTime : '02:00', // Day 캘린더에서 종료 시간
 				// 해더에 표시할 툴바
 				headerToolbar : {
-					left : 'prev,next today',
+					left : 'prev,next today myCustomButton',
 					center : 'title',
 					right : 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+				},
+				customButtons: {
+				    myCustomButton: {
+				      text: 'Map',
+				      click: function() {
+				        alert('clicked the custom button!');
+				      }
+				    }
 				},
 				initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
 				navLinks : true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
@@ -479,6 +488,7 @@
 			
 			$('.modal-title').html('일정 수정');  // modal-title
 			
+			$('#id').val(id); // editEvent title input
 			$('#editEvent-edit-title').val(title); // editEvent title input
 			$('#editEvent-edit-start').val(start); // addEvent start date input
 			$('#editEvent-edit-end').val(end); // addEvent end date input
@@ -519,7 +529,7 @@
 			});
 		} /* editEvent() End */
 		function addPlaceEvent() {
-			var Spotname; // 선택한 지역의 이름이 선언되어야한다. var Spotname = ;
+			var Spotname; // 선택한 지역의 이름이 선언되어야한다. var Spotname;
 			$('.modal-title').html('새로운 일정'); // modal-title
 			
 			$('#addEvent-edit-title').val(Spotname); // addEvent title input

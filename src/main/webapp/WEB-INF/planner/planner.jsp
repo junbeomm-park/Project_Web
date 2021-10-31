@@ -256,7 +256,7 @@
 								</form> <!-- addEvent form end -->
 								<!-- editEvent modal body -->
 								<!-- update.do form -->
-								<form action="">
+								<form action="/tour/planner/update.do">
 									<div class="modal-body editEvent">
 									<input type="hidden" name="writer" id="writer" value="${loginOkUser.mem_id}" />
 										<div class="form-group">
@@ -333,7 +333,7 @@
 												<div class="col-md-8">
 													<div class="placename"><%=place.getSpotname()%></div>
 													<div class="areaname"> &nbsp;&nbsp;<%=place.getCategory()%></div>
-													<button class="placebtn" type="submit" id="placebtn" onclick="addPlaceEvent()">
+													<button class="placebtn" type="button" id="placebtn" onclick="addPlaceEvent()">
 														<img class="btnimg" alt="" src="/tour/images/plusbtn.PNG">
 													</button>
 												</div>
@@ -466,7 +466,7 @@
 			}).on("change", function() {
 				var fromdate = $(this).val();
 			});
-		} /* editEvent() End */
+		} /* addEvents() End */
 		/* editEvent */
 		var editEvent = function(info) {
 			var id = info.event.id;
@@ -518,40 +518,44 @@
 				var fromdate = $(this).val();
 			});
 		} /* editEvent() End */
-		function addPlaceEvent(info, successCallback) {
-			// 수정 필요!
-			var writer = prompt('id를 입력하세요.');
-			var title = prompt('타이틀을 입력하세요');
-			var start = prompt('YYYY-MM-DD 맞춰서 날짜를 입력하세요.');
-			var end = prompt('YYYY-MM-DD 맞춰서 날짜를 입력하세요.');
-			var description = prompt('설명을 적어주세요.');
-			events.push({
-				writer : writer,
-				title : title,
-				start : start,
-				end : end,
-				description : description,
-				allDay : true
-			}); //push end
-			$.ajax({
-				url : "/tour/planner/insert.do",
-				type : "get",
-				data : {
-					"writer" : writer,
-					"title" : title,
-					"start" : start_date,
-					"end" : end_date,
-					"description" : description,
-					"allDay" : allDay
-				}, // 컨트롤러로 가서 insert sql 명령어 안에 들어갈 값.
-				success : function(data) {
-					if (data != null) {
-						console.log(events);
-					}// if end                           
-					successCallback(events);
-					alter('일정이 추가되었습니다.')
-				}// success: function end                          
-			}); // ajax end
+		function addPlaceEvent() {
+			var Spotname; // 선택한 지역의 이름이 선언되어야한다. var Spotname = ;
+			$('.modal-title').html('새로운 일정'); // modal-title
+			
+			$('#addEvent-edit-title').val(Spotname); // addEvent title input
+			$('#addEvent-edit-start').val(''); // addEvent start date input
+			$('#addEvent-edit-end').val(''); // addEvent end date input
+			$('#addEvent-edit-desc').val(''); // addEvent desc input
+			$('#addEvent-edit-allDay').prop('checked', true); 
+	
+			$('.modal-body.addEvent').show(); // Show addEvent modal-body 
+			$('.modal-body.editEvent').hide();
+			$('.modal-footer.addEvent').show(); // Show addEvent modal-footer
+			$('.modal-footer.editEvent').hide();
+			$("#calendarModal").modal('show'); // Show calendarModal
+	
+			$('#save-event').unbind();
+			$('#save-event').on('click', function() {
+				var title = $('#addEvent-edit-title').val();
+				
+				if (start > end) {
+		            alert('끝나는 날짜가 앞설 수 없습니다.');
+		            return false;
+		        }
+				if (title === '') {
+		            alert('일정명은 필수입니다.');
+		            return false;
+		        }
+				$('#addEvent-edit-allDay').prop('checked', false);
+				$("#calendarModal").modal('hide');
+			}); // save-event button 
+			$("#addEvent-edit-start, #addEvent-edit-end").datepicker({
+				format : "yyyy-mm-dd",
+				language : "ko",
+				autoclose : true
+			}).on("change", function() {
+				var fromdate = $(this).val();
+			});
 		} // addPlaceEvent() function end
 	</script>
 </html>

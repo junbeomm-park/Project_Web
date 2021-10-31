@@ -129,6 +129,7 @@
 				outline: none;
 				border-radius: 20px;
 				cursor: pointer;
+				border: none;
 			}
 			
 			.btnimg {
@@ -141,6 +142,7 @@
 				outline: none;
 				border-radius: 20px;
 				cursor: pointer;
+				border: none;
 			}
 			
 			.searchbtn {
@@ -148,12 +150,26 @@
 				height: 30px;
 				border: none;
 				outline: none;
+				border: none;
 				cursor: pointer;
 				background-color: #f8faff;
 				margin-top: 5px;
 			}
+			.infoimg{
+				width: 100px;
+				height: 100px;border: none;
+				outline: none;
+				cursor: pointer;
+				background-color: #f8faff;
+				margin-left: 80px;
+				margin-top: 90px;
+				border: none;
+			}
+			.infoimg:focus{ 	
+ 			   border: none;
+   			   outline:none;
+   			 }
 		</style>
-	
 	</head>
 	<body>
 		<% ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
@@ -188,6 +204,10 @@
 						</div> <!-- datepicker 미니 달력 공간 end -->
 						<div class="col-md-10 well">
 							<!-- 여행 계획 -->
+							
+							<div>
+							<a href="/tour/createplan.do"><button type="button" class="infoimg"><img class="infoimg" alt="" src="/tour/images/placemap.png"></button></a>
+							</div>
 						</div>
 					</div> <!-- row contentL end -->
 				</div> <!-- col-md-3 end -->
@@ -258,8 +278,8 @@
 								<!-- update.do form -->
 								<form action="/tour/planner/update.do">
 									<div class="modal-body editEvent">
+									<input type="hidden" name="id" id="id" value=/>
 									<input type="hidden" name="writer" id="writer" value="${loginOkUser.mem_id}" />
-									<input type="hidden" name="id" id="id" />
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-12">
@@ -334,7 +354,7 @@
 												<div class="col-md-8">
 													<div class="placename"><%=place.getSpotname()%></div>
 													<div class="areaname"> &nbsp;&nbsp;<%=place.getCategory()%></div>
-													<button class="placebtn" type="button" id="placebtn" onclick="addPlaceEvent()">
+													<button class="placebtn" type="button" id="placebtn<%=i%>" onclick="addPlaceEvent('placebtn<%=i%>')">
 														<img class="btnimg" alt="" src="/tour/images/plusbtn.PNG">
 													</button>
 												</div>
@@ -366,17 +386,9 @@
 				slotMaxTime : '02:00', // Day 캘린더에서 종료 시간
 				// 해더에 표시할 툴바
 				headerToolbar : {
-					left : 'prev,next today myCustomButton',
+					left : 'prev,next today',
 					center : 'title',
 					right : 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-				},
-				customButtons: {
-				    myCustomButton: {
-				      text: 'Map',
-				      click: function() {
-				        alert('clicked the custom button!');
-				      }
-				    }
 				},
 				initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
 				navLinks : true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
@@ -488,7 +500,6 @@
 			
 			$('.modal-title').html('일정 수정');  // modal-title
 			
-			$('#id').val(id); // editEvent title input
 			$('#editEvent-edit-title').val(title); // editEvent title input
 			$('#editEvent-edit-start').val(start); // addEvent start date input
 			$('#editEvent-edit-end').val(end); // addEvent end date input
@@ -503,6 +514,8 @@
 			
 			$('#updateEvent').unbind();
 			$('#updateEvent').on('click', function() {
+				$('#id').val(id);
+				$('#allDay').val(allDay);
 				if (start > end) {
 		            alert('끝나는 날짜가 앞설 수 없습니다.');
 		            return false;
@@ -528,8 +541,10 @@
 				var fromdate = $(this).val();
 			});
 		} /* editEvent() End */
-		function addPlaceEvent() {
-			var Spotname; // 선택한 지역의 이름이 선언되어야한다. var Spotname;
+		function addPlaceEvent(name) {
+			var Spotname = $("#"+name).closest("div").find(".placename").text();
+			
+			 // 선택한 지역의 이름이 선언되어야한다. var Spotname = ;
 			$('.modal-title').html('새로운 일정'); // modal-title
 			
 			$('#addEvent-edit-title').val(Spotname); // addEvent title input

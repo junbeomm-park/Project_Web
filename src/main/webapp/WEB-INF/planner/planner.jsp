@@ -408,7 +408,12 @@
 				},
 				eventClick : function(info) {
 					editEvent(info); // 이벤트 수정 function
-	
+				},
+				eventDrop: function (info) {
+					editEvent(info);
+				},
+				eventResize: function (info){
+					editEvent(info)
 				},
 				events : function(info, successCallback, failureCallback) {
 					$.ajax({

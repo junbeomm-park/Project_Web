@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="tour.map">
+  	<insert id="insert" parameterType="map">
+        insert into map values(#{addr}, #{spotname})
+  	</insert>
+  	<select id="list" resultType="map" parameterType="String">
+  		select * from map where addr=#{addr}
+  	</select>
+  <!-- 	<delete id="delete" parameterType="planner">
+  		delete from planner where id=#{id}
+  	</delete> -->
+  	<!-- <update id="update" parameterType="planner">
+  		update planner set title=#{title}, start_date=#{start_date}, end_date=#{end_date}, description=#{description} where id=#{id}
+  	</update> -->
+  </mapper>

@@ -22,13 +22,18 @@
 		});
 	});
 </script>
+<style type="text/css">
+	.hash{
+		color: 
+	}
+</style>
 	</head>
   <body>
  <% ArrayList<PlaceVO> placelist = (ArrayList<PlaceVO>) request.getAttribute("placelist");
 	
 	int size = placelist.size();
 %>    
-    <div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/background-03.jpg');">
+    <div class="hero-wrap js-fullheight" style="background-image: url('/tour/images/index.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -79,8 +84,8 @@
 							<option value="대전">대전</option>
 							<option value="울산">울산</option>
 							<option value="세종">세종</option>
-							<option value="경기">경기</option>
-							<option value="강원">강원</option>
+							<option value="경기도">경기도</option>
+							<option value="강원도">강원도</option>
 							<option value="충청북도">충청북도</option>
 							<option value="충청남도">충청남도</option>
 							<option value="경상북도">경상북도</option>
@@ -94,41 +99,7 @@
 		            </div>
         		</div>
         		
-        		<div class="sidebar-wrap bg-light ftco-animate">
-        			<h3 class="heading mb-4">평점</h3>
-        			<form method="post" class="star-rating">
-							  <div class="form-check">
-									<input type="checkbox" class="form-check-input" id="exampleCheck1">
-									<label class="form-check-label" for="exampleCheck1">
-										<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span></p>
-									</label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						    	   <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i></span></p>
-						      </label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-						     </label>
-							  </div>
-							  <div class="form-check">
-							    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-						      </label>
-							  </div>
-							  <div class="form-check">
-						      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-						      <label class="form-check-label" for="exampleCheck1">
-						      	<p class="rate"><span><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-							    </label>
-							  </div>
-							</form>
-        		</div>
+        
           </div>
           <div class="col-lg-9">
           	<div class="row">
@@ -139,7 +110,7 @@
           		<div class="col-md-4 ftco-animate">
 
 		    				<div class="destination">
-		    					<a href="/tour/place/tourdetail.do" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/<%= place.getImage() %>);">
+		    					<a href="/tour/place/tourdetail.do?spotareaid=<%= place.getSpotareaid() %>&state=READ" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(/tour/images/<%= place.getImage() %>);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-search2"></span>
     						</div>
@@ -152,26 +123,19 @@
     
 				    						<h3><a href="/tour/place/tourdetail.do?spotareaid=<%= place.getSpotareaid() %>&state=READ"> <%= place.getSpotname() %>   </a></h3>
 				    					 
-				    						<p class="rate">
-				    							<i class="icon-star"></i>
-				    							<i class="icon-star"></i>
-				    							<i class="icon-star"></i>
-				    							<i class="icon-star"></i>
-				    							<i class="icon-star-o"></i>
-				    							<span>8 Rating</span>
-				    						</p>
+				    					
 			    						</div>
 			    						<div class="two">
 			    							
 		    							</div>
 		    						</div>
-		    						<p class=""><%= place.getTag() %></p>
+		    						<p class="hash"><%= place.getTag() %></p>
 		    						
-		    						<p class="days">2 days 3 nights</p>
+		    						
 		    						<hr>
 		    						<p class="bottom-area d-flex">
-		    							<span><i class="icon-map-o"></i> San Franciso, CA</span> 
-		    							<span class="ml-auto"><a href="#">Discover</a></span>
+		    							<span><i class="icon-map-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;<%= place.getCategory() %></span> 
+		    							
 		    						</p>
 		    					</div>
 		    				</div>

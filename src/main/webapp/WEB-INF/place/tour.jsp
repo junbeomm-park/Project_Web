@@ -24,7 +24,11 @@
 </script>
 <style type="text/css">
 	.hash{
-		color: 
+		color: #83b5e7;
+		font-size: 12pt;
+	}
+	.spotname{
+	 	font-weight: bold;
 	}
 </style>
 	</head>
@@ -118,12 +122,7 @@
 		    					<div class="text p-3">
 		    						<div class="d-flex">
 		    							<div class="one">
-  
-
-    
-				    						<h3><a href="/tour/place/tourdetail.do?spotareaid=<%= place.getSpotareaid() %>&state=READ"> <%= place.getSpotname() %>   </a></h3>
-				    					 
-				    					
+				    						<h3 class="spotname"><a href="/tour/place/tourdetail.do?spotareaid=<%= place.getSpotareaid() %>&state=READ"> <%= place.getSpotname() %>   </a><h3>
 			    						</div>
 			    						<div class="two">
 			    							
